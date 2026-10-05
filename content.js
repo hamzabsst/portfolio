@@ -3,6 +3,13 @@ window.portfolioContent = {
   resume: 'assets/Hamza_Boussetta_CV.pdf',
   linkedin: 'https://www.linkedin.com/in/hamzabsst/',
   projects: {
+    leaklens: {
+      description:
+        'A browser-based Valgrind Memcheck log analyzer that groups memory ' +
+        'issues, surfaces stack traces and compares reports before and ' +
+        'after a fix. Logs are analyzed locally in your browser.',
+      url: 'https://leaklens-seven.vercel.app/',
+    },
     minishell: {
       name: 'Minishell',
       category: 'UNIX SYSTEMS',

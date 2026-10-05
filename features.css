@@ -409,3 +409,24 @@ pre {
     transition: none !important;
   }
 }
+
+/* LeakLens live project preview */
+.leaklens-preview {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #202b33;
+}
+.leaklens-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.leaklens-preview > span {
+  display: block;
+  padding: 18px 20px;
+  font-size: 13px;
+  color: var(--text);
+  background: #111018;
+}
