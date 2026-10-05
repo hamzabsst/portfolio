@@ -227,13 +227,18 @@ nav a {
   min-height: 85px;
   gap: 25px;
 }
-.github-social {
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.social-link {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 13px;
 }
-.github-social svg {
+.social-link svg {
   width: 22px;
   height: 22px;
 }
@@ -862,7 +867,11 @@ footer > span {
     border-radius: 3px;
     gap: 20px;
   }
+  .hero-socials {
+    gap: 12px;
+  }
   .hero-bottom {
+    gap: 14px;
     min-height: 80px;
   }
   .scroll-cue {
@@ -870,7 +879,7 @@ footer > span {
     letter-spacing: 0.02em;
     gap: 8px;
   }
-  .github-social span {
+  .social-link span {
     display: none;
   }
   .resume-hero {
