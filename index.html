@@ -253,14 +253,6 @@
           </div>
         </section>
       </div>
-      <div class="ticker" aria-hidden="true">
-        <div>
-          C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER
-          <span>✳</span> LEARNING BY BUILDING <span>✳</span> C / C++
-          <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER
-          <span>✳</span> LEARNING BY BUILDING <span>✳</span>
-        </div>
-      </div>
       <section class="work-section" id="work" aria-labelledby="work-title">
         <div class="wrap">
           <div class="section-head">
@@ -378,94 +370,108 @@
               </div>
             </div>
           </article>
-          <article class="project" id="inception">
+          <article class="project" id="ft_irc">
             <div class="project-copy">
-              <div class="project-index">03 / INFRASTRUCTURE</div>
-              <h3>Inception</h3>
-              <p class="project-intro">
-                Separate services.<br />A working whole.
-              </p>
-              <p id="inception-description"></p>
-              <ul class="skills" aria-label="Inception technologies">
-                <li>Docker</li>
-                <li>NGINX</li>
-                <li>MariaDB</li>
+              <div class="project-index">03 / NETWORKING</div>
+              <h3>ft_irc</h3>
+              <p class="project-intro">Many clients.<br />One conversation.</p>
+              <p id="ft_irc-description"></p>
+              <ul class="skills" aria-label="ft_irc technologies">
+                <li>C++98</li>
+                <li>Sockets</li>
+                <li>poll()</li>
               </ul>
               <a
                 class="text-link"
-                id="inception-link"
+                id="ft_irc-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Explore repository <span aria-hidden="true">↗</span></a
+                >Explore repository ↗</a
               >
-              <a class="study-link" href="projects/inception.html"
+              <a class="study-link" href="projects/ft_irc.html"
                 >Read project study →</a
               >
               <details>
                 <summary>
-                  Architecture &amp; decisions <span aria-hidden="true">+</span>
+                  How the chat works <span aria-hidden="true">+</span>
                 </summary>
                 <p>
-                  Custom Dockerfiles, an isolated bridge network, persistent
-                  volumes and Docker Secrets. The repository also includes Redis
-                  caching, Adminer and a static showcase site.
+                  Clients authenticate with PASS, NICK and USER, then JOIN a
+                  channel. PRIVMSG delivers a message to its other members. A
+                  poll() loop handles socket readiness; input and output buffers
+                  preserve partial reads and writes.
                 </p>
               </details>
             </div>
             <div
-              class="architecture visual"
-              aria-label="Interactive Inception core service architecture"
+              class="irc-demo visual"
+              aria-label="Interactive IRC chat simulation"
             >
-              <div class="architecture-label">CORE SERVICE ARCHITECTURE</div>
-              <div class="https">HTTPS / 443</div>
-              <div class="connector" aria-hidden="true"></div>
-              <button
-                type="button"
-                class="service"
-                data-service="nginx"
-                aria-pressed="true"
-              >
-                <span>01</span><strong>NGINX</strong><small>Web server</small>
-              </button>
-              <div class="connector" aria-hidden="true"></div>
-              <button
-                type="button"
-                class="service"
-                data-service="wordpress"
-                aria-pressed="false"
-              >
-                <span>02</span><strong>WordPress</strong><small>PHP-FPM</small>
-              </button>
-              <div class="connector" aria-hidden="true"></div>
-              <button
-                type="button"
-                class="service"
-                data-service="mariadb"
-                aria-pressed="false"
-              >
-                <span>03</span><strong>MariaDB</strong><small>Database</small>
-              </button>
-              <div class="service-inspector" aria-live="polite">
-                <h4 data-service-title>NGINX</h4>
-                <p data-service-details></p>
-                <details>
-                  <summary>
-                    Inspect Dockerfile <span aria-hidden="true">+</span>
-                  </summary>
-                  <pre><code data-service-code></code></pre>
-                  <a
-                    data-service-source
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >View source ↗</a
-                  >
-                </details>
+              <div class="irc-header">
+                <strong>#systems</strong><span>2 clients · connected</span>
               </div>
-              <button class="button" type="button" data-run-request>
-                Follow a request
+              <div class="irc-clients">
+                <section class="irc-client" aria-label="Hamza chat client">
+                  <h4><span class="irc-dot" aria-hidden="true"></span>hamza</h4>
+                  <ol
+                    class="irc-messages"
+                    data-irc-client="hamza"
+                    aria-label="Hamza messages"
+                  >
+                    <li class="irc-notice">Joined #systems</li>
+                  </ol>
+                </section>
+                <section class="irc-client" aria-label="Visitor chat client">
+                  <h4>
+                    <span class="irc-dot" aria-hidden="true"></span>visitor
+                  </h4>
+                  <ol
+                    class="irc-messages"
+                    data-irc-client="visitor"
+                    aria-label="Visitor messages"
+                  >
+                    <li class="irc-notice">Joined #systems</li>
+                  </ol>
+                </section>
+              </div>
+              <form id="irc-form">
+                <label for="irc-sender">Send as</label>
+                <select id="irc-sender">
+                  <option value="hamza">hamza</option>
+                  <option value="visitor">visitor</option>
+                </select>
+                <label class="irc-message-label" for="irc-message"
+                  >Message to #systems</label
+                >
+                <div class="input-row">
+                  <input
+                    id="irc-message"
+                    maxlength="160"
+                    required
+                    placeholder="Say hello to the other client…"
+                    autocomplete="off"
+                  />
+                  <button class="button" type="submit">Send</button>
+                </div>
+              </form>
+              <details class="irc-wire" open>
+                <summary>
+                  Behind the message <span aria-hidden="true">+</span>
+                </summary>
+                <pre><code data-irc-wire>PRIVMSG #systems :Hello!\r\n</code></pre>
+                <p data-irc-status role="status">
+                  Type a message. The server routes it to the other client.
+                </p>
+              </details>
+              <button class="button" type="button" data-irc-connect>
+                Show connection steps
               </button>
-              <p data-request-status class="request-status" role="status">
-                Click a service to inspect its ports and storage.
+              <p data-irc-connection role="status" class="irc-connection">
+                PASS → NICK → USER → JOIN #systems
+              </p>
+              <p class="irc-caption">
+                Local JavaScript simulation · no public chat server. The
+                repository contains the C++ socket implementation.
               </p>
             </div>
           </article>

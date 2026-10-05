@@ -68,35 +68,6 @@ select:focus-visible {
 .terminal-muted {
   min-height: 60px;
 }
-.service {
-  color: var(--ink);
-  text-align: left;
-  font-family: var(--sans);
-}
-.service[aria-pressed='true'] {
-  border-color: var(--accent);
-}
-.service[data-flow='true'] {
-  box-shadow: 0 0 25px #bb92fa45;
-  border-color: var(--accent);
-}
-.service-inspector {
-  align-self: stretch;
-  border-top: 1px solid var(--line);
-  margin-top: 22px;
-  padding-top: 18px;
-}
-.service-inspector h4 {
-  margin: 0 0 6px;
-  font: 500 17px var(--display);
-}
-.service-inspector p {
-  color: var(--muted);
-  font-size: 13px;
-}
-.service-inspector details {
-  margin: 0 0 15px;
-}
 pre {
   overflow-x: auto;
   max-width: 100%;
@@ -107,20 +78,6 @@ pre {
   font:
     12px/1.7 ui-monospace,
     monospace;
-}
-.service-inspector pre {
-  max-height: 250px;
-}
-.service-inspector a {
-  color: var(--accent);
-  font-size: 12px;
-}
-.request-status {
-  width: 100%;
-  min-height: 45px;
-  margin: 15px 0 0;
-  font-size: 12px;
-  color: var(--muted);
 }
 /* Browser lab */
 .lab-grid {
@@ -170,7 +127,8 @@ pre {
   color: var(--muted);
 }
 .demo-panel input,
-.demo-panel select {
+.demo-panel select,
+.irc-demo input {
   background: var(--bg);
   color: var(--ink);
   border: 1px solid var(--line);
@@ -428,4 +386,133 @@ pre {
   font-size: 13px;
   color: var(--text);
   background: #111018;
+}
+
+/* Two-client IRC channel simulation */
+.irc-demo {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #100e15;
+  padding: 24px;
+}
+.irc-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.irc-header strong {
+  color: var(--accent);
+}
+.irc-header span,
+.irc-caption,
+.irc-connection {
+  color: var(--muted);
+  font-size: 12px;
+}
+.irc-clients {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.irc-client {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #09080e;
+}
+.irc-client h4 {
+  font: 500 13px var(--sans);
+  margin: 0;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.irc-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #85c9ac;
+}
+.irc-messages {
+  list-style: none;
+  height: 145px;
+  overflow-y: auto;
+  padding: 12px;
+  margin: 0;
+  font-size: 13px;
+}
+.irc-messages li {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.irc-messages strong {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+}
+.irc-notice {
+  color: var(--muted);
+  font-size: 11px;
+}
+.irc-local strong {
+  color: var(--muted);
+}
+#irc-form {
+  margin-top: 20px;
+}
+#irc-form label {
+  font-size: 12px;
+  color: var(--muted);
+}
+#irc-sender {
+  margin-left: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 8px;
+}
+.irc-message-label {
+  display: block;
+  margin: 12px 0 8px;
+}
+#irc-message {
+  width: 100%;
+  min-width: 0;
+}
+.irc-wire pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.irc-wire p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.irc-connection {
+  min-height: 38px;
+  line-height: 1.6;
+}
+.irc-caption {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .irc-demo {
+    padding: 16px;
+  }
+  .irc-header {
+    flex-wrap: wrap;
+  }
+  .irc-clients {
+    gap: 8px;
+  }
+  .irc-messages {
+    padding: 8px;
+  }
 }

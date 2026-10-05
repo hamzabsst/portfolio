@@ -3,7 +3,7 @@
 Live website: https://hamzabsst.me/
 
 A static HTML, CSS, and JavaScript portfolio with a dark theme, animated
-character, selected projects, and two browser demos.
+character, selected projects, and interactive browser demos.
 
 ## Editing
 
@@ -11,7 +11,7 @@ character, selected projects, and two browser demos.
 - `styles.css`: base styling, character animation and responsive layout
 - `features.css`: project interactions, demos, copy-email control and study
   pages
-- `content.js`: email, résumé, project descriptions and Dockerfile snippets
+- `content.js`: email, résumé, project descriptions
 - `script.js` / `eye-tracking.js`: content, scroll reveals, character and motion
   control
 - `intro-story.js` / `intro-story.css`: shared character transition from the
@@ -19,7 +19,9 @@ character, selected projects, and two browser demos.
 - `js/features.js`: entry point for retained interactive features
 - `js/ui.js`: clipboard feedback
 - `js/motion.js`: shared pause, visibility and reduced-motion policy
-- `js/project-interactions.js`: Minishell walkthrough and Inception inspector
+- `js/project-interactions.js`: Minishell walkthrough
+- `js/irc-demo.js`: two-client chat and IRC connection walkthrough
+- `js/irc-model.js`: safe channel-message routing for the browser simulation
 - `js/*-model.js` / `js/*-demo.js`: simulation models and browser controls
 - `projects/`: source-based project studies; homepage links the selected
   projects and demos
@@ -33,9 +35,10 @@ http://localhost:8765/.
 ## Checks
 
 Run `node tests/models.test.mjs`, `node tests/motion.test.mjs` and
-`node tests/intro-story.test.mjs` (Node 22+). No package install is required.
+`node tests/intro-story.test.mjs` and `node tests/irc.test.mjs` (Node 22+). No
+package install is required.
 
-Browser demos are JavaScript models, labeled separately from the C
+Browser demos are JavaScript models, labeled separately from the C/C++
 implementations. The push_swap study includes measured native C operation counts
 and complete inputs in `assets/push-swap-benchmark.json`. Reproduce with
 `python3 scripts/benchmark-push-swap.py /path/to/push_swap`. This updates the

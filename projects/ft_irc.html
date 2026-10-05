@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ft_irc — Hamza Boussetta</title>
+    <meta
+      name="description"
+      content="A multi-client IRC server in C++98 with channels, messaging and buffered nonblocking socket I/O."
+    />
+    <link rel="canonical" href="https://hamzabsst.me/projects/ft_irc.html" />
+    <meta property="og:title" content="ft_irc — Hamza Boussetta" />
+    <meta
+      property="og:description"
+      content="A multi-client IRC server in C++98 with channels, messaging and buffered nonblocking socket I/O."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://hamzabsst.me/projects/ft_irc.html"
+    />
+    <meta
+      property="og:image"
+      content="https://hamzabsst.me/assets/social-preview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../features.css" />
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to content</a>
+    <header class="wrap navigation">
+      <a class="wordmark" href="../index.html" aria-label="Hamza Boussetta home"
+        >HB<span>.</span></a
+      ><a href="../index.html#work">← All projects</a
+      ><a href="../index.html#contact">Contact ↗</a>
+    </header>
+    <main class="article-layout wrap" id="article">
+      <div class="eyebrow">PROJECT STUDY / NETWORKING</div>
+      <h1>ft_irc</h1>
+      <p class="article-lead">
+        An IRC server that keeps multiple clients in conversation through
+        channels, private messages and a shared event loop.
+      </p>
+      <p class="card-tech">C++98 · Sockets · Nonblocking I/O</p>
+      <div class="article-actions">
+        <a
+          class="button"
+          href="https://github.com/hamzabsst/ft_irc"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Repository ↗</a
+        >
+      </div>
+      <section>
+        <h2>The problem</h2>
+        <p>
+          Handle several TCP clients without blocking on one connection.
+          Authenticate users, track channel membership and deliver messages
+          using IRC commands.
+        </p>
+      </section>
+      <section>
+        <h2>From connection to conversation</h2>
+        <pre><code>PASS &lt;server-password&gt;
+NICK hamza
+USER hamza 0 * :Hamza
+JOIN #systems
+PRIVMSG #systems :Hello from my client!</code></pre>
+        <p>
+          PASS supplies the server password. NICK and USER identify the client.
+          JOIN adds it to a channel. PRIVMSG routes its text to the channel's
+          other members, or to one nickname for a direct message.
+        </p>
+      </section>
+      <section>
+        <h2>A design decision</h2>
+        <p>
+          The server uses poll() to wait for socket readiness. Per-client input
+          buffers collect incoming fragments; output queues keep unsent bytes
+          until the socket can accept them.
+        </p>
+      </section>
+      <section>
+        <h2>A socket edge case</h2>
+        <p>
+          A TCP read is not one IRC command. A command can arrive across several
+          reads, and one read can contain several commands. receiveData()
+          appends bytes and extracts complete lines. flushWrite() consumes only
+          the number of bytes send() wrote, retaining the rest for a later
+          writable event.
+        </p>
+      </section>
+      <section>
+        <h2>Channel delivery</h2>
+        <p>
+          cmdPrivmsg() checks that the channel exists and the sender is a member
+          before broadcasting. It excludes the sender from that broadcast. The
+          browser demo shows the sender's local copy beside the message received
+          by the other client.
+        </p>
+        <a class="button" href="../index.html#ft_irc">Try the chat demo →</a>
+      </section>
+      <section>
+        <h2>A possible next iteration</h2>
+        <p>
+          Add automated tests for fragmented commands, slow readers and
+          disconnects during broadcasts.
+        </p>
+      </section>
+      <section>
+        <h2>Explore the implementation</h2>
+        <p>
+          This walkthrough is based on commit <code>517d9c8</code>. It describes
+          source behavior rather than a personal debugging story.
+        </p>
+        <a
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/hamzabsst/ft_irc/blob/517d9c83624fa33947792608e465a4fc9cc4e620/src/server/SocketIO.cpp"
+          >Read the socket buffers ↗</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      <a href="../index.html">Back to portfolio ↑</a
+      ><a
+        href="https://github.com/hamzabsst"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub ↗</a
+      ><a
+        href="https://www.linkedin.com/in/hamzabsst/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn ↗</a
+      >
+    </footer>
+  </body>
+</html>

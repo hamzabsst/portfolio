@@ -1,13 +1,11 @@
 import { copyEmail } from './ui.js';
-import {
-  setupShellWalkthrough,
-  setupArchitecture,
-} from './project-interactions.js';
+import { setupShellWalkthrough } from './project-interactions.js';
+import { setupIrcDemo } from './irc-demo.js';
 import { setupStackDemo } from './stack-demo.js';
 import { setupPhilosophers } from './philosophers-demo.js';
 
 setupShellWalkthrough();
-setupArchitecture();
+setupIrcDemo();
 setupStackDemo();
 setupPhilosophers();
 

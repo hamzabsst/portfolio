@@ -295,25 +295,6 @@ nav a {
   animation-play-state: paused !important;
 }
 
-/* Skills ticker */
-.ticker {
-  overflow: hidden;
-  border-block: 1px solid var(--line);
-  padding: 20px 0;
-  background: #0d0b12;
-}
-.ticker > div {
-  width: max-content;
-  font: 500 23px var(--display);
-  letter-spacing: 0.02em;
-  animation: ticker 35s linear infinite;
-  color: #c5bbd2;
-  white-space: nowrap;
-}
-.ticker span {
-  color: var(--accent);
-  padding: 0 36px;
-}
 /* Projects */
 .work-section {
   padding: 115px 0 0;
@@ -481,66 +462,6 @@ em {
   padding: 17px 25px;
   color: var(--muted);
   font-size: 13px;
-}
-.architecture {
-  min-height: 445px;
-  border: 1px solid #3a2b49;
-  border-radius: 10px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 50% 40%, #54287322, transparent 70%), #100e15;
-}
-.architecture-label {
-  font:
-    12px ui-monospace,
-    monospace;
-  letter-spacing: 0.09em;
-  color: var(--muted);
-  margin-bottom: 26px;
-}
-.https {
-  font:
-    13px ui-monospace,
-    monospace;
-  color: var(--accent);
-}
-.connector {
-  height: 22px;
-  width: 1px;
-  background: #796085;
-}
-.service {
-  width: 85%;
-  background: #21172c;
-  border: 1px solid #4b335f;
-  border-radius: 4px;
-  padding: 14px 20px;
-  display: grid;
-  grid-template-columns: 32px 1fr;
-}
-.service > span {
-  font:
-    12px ui-monospace,
-    monospace;
-  color: #a47ec6;
-  grid-row: span 2;
-  align-self: center;
-}
-.service strong {
-  font-weight: 500;
-  font-size: 17px;
-}
-.service small {
-  font-size: 12px;
-  color: var(--muted);
-}
-.architecture-foot {
-  margin-top: 25px;
-  font-size: 12px;
-  color: var(--muted);
 }
 details {
   margin-top: 27px;
@@ -712,11 +633,6 @@ footer > span {
   50% {
     opacity: 0.85;
     transform: scaleX(1.09);
-  }
-}
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
   }
 }
 @keyframes blink {
@@ -892,15 +808,6 @@ footer > span {
   }
   .resume-hero span {
     margin-left: 5px;
-  }
-  .ticker {
-    padding: 16px 0;
-  }
-  .ticker > div {
-    font-size: 18px;
-  }
-  .ticker span {
-    padding: 0 25px;
   }
   .work-section {
     padding: 70px 0 0;
