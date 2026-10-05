@@ -51,3 +51,13 @@ hero.addEventListener('pointermove', event => {
 });
 hero.addEventListener('pointerleave', resetPortrait);
 reduceMotion.addEventListener('change', resetPortrait);
+
+// Return a cleanup function, also usable when removing this character dynamically.
+let destroyEyeTracking = window.setupCharacterEyes(
+  document.querySelector('.character-art'),
+  () => motionPaused
+);
+window.addEventListener('pagehide', () => destroyEyeTracking());
+window.addEventListener('pageshow', event => {
+  if (event.persisted) destroyEyeTracking = window.setupCharacterEyes(document.querySelector('.character-art'), () => motionPaused);
+});
