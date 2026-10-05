@@ -659,7 +659,6 @@ details p {
   color: var(--muted);
 }
 .email {
-  font-size: clamp(17px, 2.7vw, 34px);
   display: inline-block;
   border-bottom: 1px solid #7b588f;
   padding-bottom: 8px;

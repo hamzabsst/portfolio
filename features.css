@@ -289,10 +289,21 @@ pre {
   gap: 25px;
   flex-wrap: wrap;
 }
+.email,
 .contact-linkedin {
-  display: inline-block;
+  font-size: clamp(18px, 2vw, 24px);
+}
+.contact-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 25px;
   color: var(--accent);
+}
+.contact-linkedin svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 .site-status {
   min-height: 26px;

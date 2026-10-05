@@ -1,7 +1,7 @@
 window.portfolioContent = {
   email: 'hb.hamza.bst@gmail.com',
   resume: 'assets/Hamza_Boussetta_CV.pdf',
-  linkedin: 'https://www.linkedin.com/in/hamza-boussetta-830155220/',
+  linkedin: 'https://www.linkedin.com/in/hamzabsst/',
   projects: {
     minishell: {
       name: 'Minishell',
