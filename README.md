@@ -19,7 +19,6 @@ character, selected projects, and interactive browser demos.
 - `js/features.js`: entry point for retained interactive features
 - `js/ui.js`: clipboard feedback
 - `js/motion.js`: shared pause, visibility and reduced-motion policy
-- `js/project-interactions.js`: Minishell walkthrough
 - `js/irc-demo.js`: two-client chat and IRC connection walkthrough
 - `js/irc-model.js`: safe channel-message routing for the browser simulation
 - `js/*-model.js` / `js/*-demo.js`: simulation models and browser controls

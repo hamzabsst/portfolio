@@ -10,15 +10,12 @@ window.portfolioContent = {
         'after a fix. Logs are analyzed locally in your browser.',
       url: 'https://leaklens-seven.vercel.app/',
     },
-    minishell: {
-      name: 'Minishell',
-      category: 'UNIX SYSTEMS',
-      tech: 'C · Processes · Parsing',
+    afterglow: {
       description:
-        'A Unix shell built in C, with command execution, built-ins, ' +
-        'pipes, redirections, quoting and environment variable ' +
-        'expansion.',
-      url: 'https://github.com/hamzabsst/minishell',
+        'A watch-together app for 2–6 friends with synchronized YouTube ' +
+        'playback, screen sharing, voice and real-time chat. Create a ' +
+        'room, share its link and choose a display name—no account needed.',
+      url: 'https://afterglowroom.vercel.app/',
     },
     ft_irc: {
       name: 'ft_irc',

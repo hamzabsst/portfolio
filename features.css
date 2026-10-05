@@ -37,36 +37,13 @@ select:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
 }
-/* Project walkthroughs and source inspector */
+/* Project study links */
 .study-link {
   display: block;
   width: fit-content;
   margin-top: 16px;
   font-size: 13px;
   color: var(--accent);
-}
-.shell-stages {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 25px 0;
-  color: var(--muted);
-}
-[data-shell-stage] {
-  padding: 4px 7px;
-  border-radius: 4px;
-  border: 1px solid var(--line);
-}
-[data-shell-stage][data-active='true'] {
-  color: var(--ink);
-  background: #6a369a55;
-  border-color: var(--accent);
-}
-.terminal-content {
-  padding: 30px 22px;
-}
-.terminal-muted {
-  min-height: 60px;
 }
 pre {
   overflow-x: auto;
@@ -352,10 +329,6 @@ pre {
   .philosopher-settings {
     grid-template-columns: repeat(2, 1fr);
   }
-  .shell-stages {
-    gap: 5px;
-    font-size: 12px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -367,20 +340,20 @@ pre {
   }
 }
 
-/* LeakLens live project preview */
-.leaklens-preview {
+/* Live project screenshots */
+.project-preview {
   display: block;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #202b33;
 }
-.leaklens-preview img {
+.project-preview img {
   display: block;
   width: 100%;
   height: auto;
 }
-.leaklens-preview > span {
+.project-preview > span {
   display: block;
   padding: 18px 20px;
   font-size: 13px;
