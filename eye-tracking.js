@@ -1,5 +1,8 @@
 /* SVG coordinates keep pupils attached to the animated character. */
-window.setupCharacterEyes = function setupCharacterEyes(svg, isPaused = () => false) {
+window.setupCharacterEyes = function setupCharacterEyes(
+  svg,
+  isPaused = () => false,
+) {
   if (!svg) return () => {};
 
   const FRAME_DURATION = 1000 / 60;
@@ -50,7 +53,8 @@ window.setupCharacterEyes = function setupCharacterEyes(svg, isPaused = () => fa
   }
 
   function getCursorPosition(now) {
-    if (!pointer || now - lastInputTime >= IDLE_TIMEOUT || isPaused()) return null;
+    if (!pointer || now - lastInputTime >= IDLE_TIMEOUT || isPaused())
+      return null;
 
     // Read the current transform, including scrolling, rotation and breathing.
     const matrix = svg.getScreenCTM();
@@ -76,7 +80,9 @@ window.setupCharacterEyes = function setupCharacterEyes(svg, isPaused = () => fa
   function animateEyes(now) {
     if (destroyed) return;
 
-    const elapsed = previousFrameTime ? Math.min(now - previousFrameTime, 50) : FRAME_DURATION;
+    const elapsed = previousFrameTime
+      ? Math.min(now - previousFrameTime, 50)
+      : FRAME_DURATION;
     previousFrameTime = now;
     // Preserve the same feel on 60 Hz and high-refresh-rate displays.
     const alpha = 1 - Math.pow(1 - SMOOTHING, elapsed / FRAME_DURATION);
@@ -123,7 +129,11 @@ window.setupCharacterEyes = function setupCharacterEyes(svg, isPaused = () => fa
     listenerOptions,
   );
   window.addEventListener('blur', clearPointer, listenerOptions);
-  document.addEventListener('visibilitychange', updateAnimationPolicy, listenerOptions);
+  document.addEventListener(
+    'visibilitychange',
+    updateAnimationPolicy,
+    listenerOptions,
+  );
   reducedMotion.addEventListener('change', updateAnimationPolicy, {
     signal: listeners.signal,
   });

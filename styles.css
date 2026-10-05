@@ -422,7 +422,8 @@ em {
   min-height: 390px;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 90% 0, #59297820, transparent 70%), #100e15;
+  background:
+    radial-gradient(ellipse at 90% 0, #59297820, transparent 70%), #100e15;
   overflow: hidden;
 }
 .terminal-bar {
@@ -486,7 +487,8 @@ em {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(ellipse at 50% 40%, #54287322, transparent 70%), #100e15;
+  background:
+    radial-gradient(ellipse at 50% 40%, #54287322, transparent 70%), #100e15;
 }
 .architecture-label {
   font:
@@ -835,7 +837,8 @@ footer > span {
     width: 115%;
     height: 510px;
     max-width: 600px;
-    transform: translateX(-50%) translate3d(var(--portrait-x, 0px), var(--portrait-y, 0px), 0)
+    transform: translateX(-50%)
+      translate3d(var(--portrait-x, 0px), var(--portrait-y, 0px), 0)
       rotate(var(--portrait-tilt, 0deg));
   }
   .hero-role {

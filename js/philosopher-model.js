@@ -31,7 +31,8 @@ export function stepTable(table, delta) {
       table.forks[(person.id + 1) % people.length] = null;
       person.state = 'sleeping';
       person.until = table.time + table.timeToSleep;
-    } else if (person.state === 'sleeping' && table.time >= person.until) person.state = 'thinking';
+    } else if (person.state === 'sleeping' && table.time >= person.until)
+      person.state = 'thinking';
   }
   // Rotate acquisition priority. A philosopher must own both forks before eating.
   const priority = Math.floor(table.time / 250) % people.length;

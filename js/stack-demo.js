@@ -95,7 +95,8 @@ export function setupStackDemo() {
   play.addEventListener('click', () => {
     if (playing) return stop();
     if (!motionAllowed()) {
-      status.textContent = 'Motion is paused. Use Step, or enable motion to play.';
+      status.textContent =
+        'Motion is paused. Use Step, or enable motion to play.';
       return;
     }
     if (index >= frames.length - 1) index = 0;

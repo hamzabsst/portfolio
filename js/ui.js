@@ -9,7 +9,9 @@ export async function copyEmail() {
     announce('Email copied to clipboard.');
     return true;
   } catch {
-    announce('Copy unavailable. Select the email address or use the email link.');
+    announce(
+      'Copy unavailable. Select the email address or use the email link.',
+    );
     return false;
   }
 }

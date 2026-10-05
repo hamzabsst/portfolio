@@ -1,5 +1,8 @@
 import { copyEmail } from './ui.js';
-import { setupShellWalkthrough, setupArchitecture } from './project-interactions.js';
+import {
+  setupShellWalkthrough,
+  setupArchitecture,
+} from './project-interactions.js';
 import { setupStackDemo } from './stack-demo.js';
 import { setupPhilosophers } from './philosophers-demo.js';
 
@@ -8,4 +11,6 @@ setupArchitecture();
 setupStackDemo();
 setupPhilosophers();
 
-document.querySelector('[data-copy-email]').addEventListener('click', copyEmail);
+document
+  .querySelector('[data-copy-email]')
+  .addEventListener('click', copyEmail);

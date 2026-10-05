@@ -4,7 +4,8 @@
   function populateContent(content) {
     for (const [id, project] of Object.entries(content.projects)) {
       if (!document.getElementById(`${id}-description`)) continue;
-      document.getElementById(`${id}-description`).textContent = project.description;
+      document.getElementById(`${id}-description`).textContent =
+        project.description;
       document.getElementById(`${id}-link`).href = project.url;
     }
 
@@ -75,7 +76,10 @@
       paused = !paused;
       document.body.classList.toggle('motion-paused', paused);
       control.setAttribute('aria-pressed', String(paused));
-      control.setAttribute('aria-label', paused ? 'Resume animation' : 'Pause animation');
+      control.setAttribute(
+        'aria-label',
+        paused ? 'Resume animation' : 'Pause animation',
+      );
       label.textContent = paused ? 'Resume motion' : 'Pause motion';
       icon.textContent = paused ? '▷' : 'Ⅱ';
       document.dispatchEvent(new Event('portfolio-motion-change'));
@@ -86,9 +90,11 @@
     hero.addEventListener(
       'pointermove',
       (event) => {
-        if (reducedMotion.matches || paused || event.pointerType !== 'mouse') return;
+        if (reducedMotion.matches || paused || event.pointerType !== 'mouse')
+          return;
         pointer = { x: event.clientX, y: event.clientY };
-        if (!portraitFrame) portraitFrame = requestAnimationFrame(updatePortrait);
+        if (!portraitFrame)
+          portraitFrame = requestAnimationFrame(updatePortrait);
       },
       { passive: true },
     );

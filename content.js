@@ -8,7 +8,9 @@ window.portfolioContent = {
       category: 'UNIX SYSTEMS',
       tech: 'C · Processes · Parsing',
       description:
-        'A Unix shell built in C, with command execution, built-ins, pipes, redirections, quoting and environment variable expansion.',
+        'A Unix shell built in C, with command execution, built-ins, ' +
+        'pipes, redirections, quoting and environment variable ' +
+        'expansion.',
       url: 'https://github.com/hamzabsst/minishell',
     },
     inception: {
@@ -16,7 +18,9 @@ window.portfolioContent = {
       category: 'INFRASTRUCTURE',
       tech: 'Docker · NGINX · MariaDB',
       description:
-        'A WordPress stack built from custom Dockerfiles, with service isolation, persistent data, health checks and file-mounted secrets.',
+        'A WordPress stack built from custom Dockerfiles, with ' +
+        'service isolation, persistent data, health checks and ' +
+        'file-mounted secrets.',
       url: 'https://github.com/hamzabsst/inception',
     },
     push_swap: {
@@ -24,7 +28,9 @@ window.portfolioContent = {
       category: 'ALGORITHMS',
       tech: 'C · Linked lists · Cost models',
       description:
-        'Sort integers with two stacks and a constrained instruction set. Includes input validation, small-stack strategies and a checker.',
+        'Sort integers with two stacks and a constrained instruction ' +
+        'set. Includes input validation, small-stack strategies and a ' +
+        'checker.',
       url: 'https://github.com/hamzabsst/push_swap',
     },
     philosophers: {
@@ -32,7 +38,9 @@ window.portfolioContent = {
       category: 'CONCURRENCY',
       tech: 'C · pthreads · Mutexes',
       description:
-        'Coordinate philosophers competing for forks, with protected meal state, a monitor, and a process/semaphore bonus implementation.',
+        'Coordinate philosophers competing for forks, with protected ' +
+        'meal state, a monitor, and a process/semaphore bonus ' +
+        'implementation.',
       url: 'https://github.com/hamzabsst/philosophers',
     },
     cub3d: {
@@ -40,7 +48,8 @@ window.portfolioContent = {
       category: 'GRAPHICS',
       tech: 'C · Raycasting · MiniLibX',
       description:
-        'Render a textured first-person scene from a grid map using raycasting and DDA traversal.',
+        'Render a textured first-person scene from a grid map using ' +
+        'raycasting and DDA traversal.',
       url: 'https://github.com/hamzabsst/cub3D',
     },
     ft_irc: {
@@ -48,7 +57,9 @@ window.portfolioContent = {
       category: 'NETWORKING',
       tech: 'C++98 · Sockets · Nonblocking I/O',
       description:
-        'A multi-client IRC server with authentication, channels, messaging, operator commands and buffered nonblocking socket I/O.',
+        'A multi-client IRC server with authentication, channels, ' +
+        'messaging, operator commands and buffered nonblocking socket ' +
+        'I/O.',
       url: 'https://github.com/hamzabsst/ft_irc',
     },
   },
@@ -56,27 +67,87 @@ window.portfolioContent = {
     nginx: {
       name: 'NGINX',
       details:
-        'HTTPS 443 is published on the host. Shared wordpress volume: /var/www/html. Routes PHP requests to WordPress:9000.',
-      snippet:
-        'FROM debian:bullseye\n\nRUN apt-get update && apt-get install -y nginx openssl gettext-base \\\n\t&& rm -rf /var/lib/apt/lists/*\n\nCOPY conf/nginx.conf /etc/nginx/conf.d/default.conf.template\n\nCOPY conf/entrypoint.sh /usr/local/bin/\n\nRUN chmod +x /usr/local/bin/entrypoint.sh\n\nEXPOSE 443\n\nENTRYPOINT ["/usr/local/bin/entrypoint.sh"]\n',
+        'HTTPS 443 is published on the host. Shared wordpress volume: ' +
+        '/var/www/html. Routes PHP requests to WordPress:9000.',
+      snippet: [
+        'FROM debian:bullseye',
+        '',
+        'RUN apt-get update && apt-get install -y nginx openssl gettext-base \\',
+        '\t&& rm -rf /var/lib/apt/lists/*',
+        '',
+        'COPY conf/nginx.conf /etc/nginx/conf.d/default.conf.template',
+        '',
+        'COPY conf/entrypoint.sh /usr/local/bin/',
+        '',
+        'RUN chmod +x /usr/local/bin/entrypoint.sh',
+        '',
+        'EXPOSE 443',
+        '',
+        'ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]',
+        '',
+      ].join('\n'),
       source:
         'https://github.com/hamzabsst/inception/blob/5ee80d35156185c80af89b87b6e144e2b7481f70/srcs/requirements/nginx/Dockerfile',
     },
     wordpress: {
       name: 'WordPress / PHP-FPM',
       details:
-        'Port 9000 is internal. Volume: /var/www/html. Waits for healthy MariaDB and Redis; reads its granted password secrets.',
-      snippet:
-        'FROM debian:bullseye\n\nRUN apt-get update && apt-get install -y \\\n\tphp7.4-fpm \\\n\tphp7.4-mysql \\\n\tcurl \\\n\tdefault-mysql-client \\\n\t&& rm -rf /var/lib/apt/lists/*\n\nRUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \\\n\t&& chmod +x wp-cli.phar \\\n\t&& mv wp-cli.phar /usr/local/bin/wp\n\nCOPY conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf\nCOPY conf/entrypoint.sh /usr/local/bin/entrypoint.sh\nRUN chmod +x /usr/local/bin/entrypoint.sh\n\nWORKDIR /var/www/html\n\nEXPOSE 9000\n\nENTRYPOINT ["/usr/local/bin/entrypoint.sh"]\n',
+        'Port 9000 is internal. Volume: /var/www/html. Waits for ' +
+        'healthy MariaDB and Redis; reads its granted password ' +
+        'secrets.',
+      snippet: [
+        'FROM debian:bullseye',
+        '',
+        'RUN apt-get update && apt-get install -y \\',
+        '\tphp7.4-fpm \\',
+        '\tphp7.4-mysql \\',
+        '\tcurl \\',
+        '\tdefault-mysql-client \\',
+        '\t&& rm -rf /var/lib/apt/lists/*',
+        '',
+        'RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \\',
+        '\t&& chmod +x wp-cli.phar \\',
+        '\t&& mv wp-cli.phar /usr/local/bin/wp',
+        '',
+        'COPY conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf',
+        'COPY conf/entrypoint.sh /usr/local/bin/entrypoint.sh',
+        'RUN chmod +x /usr/local/bin/entrypoint.sh',
+        '',
+        'WORKDIR /var/www/html',
+        '',
+        'EXPOSE 9000',
+        '',
+        'ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]',
+        '',
+      ].join('\n'),
       source:
         'https://github.com/hamzabsst/inception/blob/5ee80d35156185c80af89b87b6e144e2b7481f70/srcs/requirements/wordpress/Dockerfile',
     },
     mariadb: {
       name: 'MariaDB',
       details:
-        'Port 3306 is internal. Volume: /var/lib/mysql. Receives database password files through /run/secrets; no database port is published to the host.',
-      snippet:
-        'FROM debian:bullseye\n\nRUN apt-get update && \\\n\tapt-get install -y mariadb-server && \\\n\trm -rf /var/lib/mysql/* && \\\n\trm -rf /var/lib/apt/lists/*\n\nCOPY conf/entrypoint.sh /usr/local/bin/\n\nRUN chmod +x /usr/local/bin/entrypoint.sh\n\nENTRYPOINT ["/usr/local/bin/entrypoint.sh"]\n\nEXPOSE 3306\n\nCMD ["mariadbd", "--user=mysql"]\n',
+        'Port 3306 is internal. Volume: /var/lib/mysql. Receives ' +
+        'database password files through /run/secrets; no database ' +
+        'port is published to the host.',
+      snippet: [
+        'FROM debian:bullseye',
+        '',
+        'RUN apt-get update && \\',
+        '\tapt-get install -y mariadb-server && \\',
+        '\trm -rf /var/lib/mysql/* && \\',
+        '\trm -rf /var/lib/apt/lists/*',
+        '',
+        'COPY conf/entrypoint.sh /usr/local/bin/',
+        '',
+        'RUN chmod +x /usr/local/bin/entrypoint.sh',
+        '',
+        'ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]',
+        '',
+        'EXPOSE 3306',
+        '',
+        'CMD ["mariadbd", "--user=mysql"]',
+        '',
+      ].join('\n'),
       source:
         'https://github.com/hamzabsst/inception/blob/5ee80d35156185c80af89b87b6e144e2b7481f70/srcs/requirements/mariadb/Dockerfile',
     },

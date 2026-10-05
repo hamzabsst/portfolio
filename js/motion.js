@@ -2,7 +2,9 @@
 export const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 export function motionAllowed() {
   return (
-    !reducedMotion.matches && !document.hidden && !document.body.classList.contains('motion-paused')
+    !reducedMotion.matches &&
+    !document.hidden &&
+    !document.body.classList.contains('motion-paused')
   );
 }
 

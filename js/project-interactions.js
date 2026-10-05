@@ -14,14 +14,18 @@ export function setupShellWalkthrough() {
   let elapsed = 0;
   let lastStage = -2;
   function render() {
-    command.textContent = text.slice(0, Math.min(text.length, Math.floor(elapsed / 35)));
+    command.textContent = text.slice(
+      0,
+      Math.min(text.length, Math.floor(elapsed / 35)),
+    );
     const stage = Math.min(2, Math.floor((elapsed - 1100) / 900));
     if (stage !== lastStage) {
       lastStage = stage;
       stages.forEach((node, index) => {
         node.dataset.active = String(index === stage);
       });
-      explanation.textContent = stage >= 0 ? messages[stage] : 'Typing a sample pipeline…';
+      explanation.textContent =
+        stage >= 0 ? messages[stage] : 'Typing a sample pipeline…';
     }
   }
   const timeline = createTimeline((delta) => {
@@ -56,7 +60,10 @@ export function setupArchitecture() {
   function select(id) {
     const service = services[id];
     buttons.forEach((button) =>
-      button.setAttribute('aria-pressed', String(button.dataset.service === id)),
+      button.setAttribute(
+        'aria-pressed',
+        String(button.dataset.service === id),
+      ),
     );
     title.textContent = service.name;
     details.textContent = service.details;

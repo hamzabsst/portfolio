@@ -8,15 +8,24 @@
       name="description"
       content="Sort integers with two stacks and a constrained instruction set. Includes input validation, small-stack strategies and a checker."
     />
-    <link rel="canonical" href="https://hamzabsst.vercel.app/projects/push_swap.html" />
+    <link
+      rel="canonical"
+      href="https://hamzabsst.vercel.app/projects/push_swap.html"
+    />
     <meta property="og:title" content="push_swap — Hamza Boussetta" />
     <meta
       property="og:description"
       content="Sort integers with two stacks and a constrained instruction set. Includes input validation, small-stack strategies and a checker."
     />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://hamzabsst.vercel.app/projects/push_swap.html" />
-    <meta property="og:image" content="https://hamzabsst.vercel.app/assets/social-preview.png" />
+    <meta
+      property="og:url"
+      content="https://hamzabsst.vercel.app/projects/push_swap.html"
+    />
+    <meta
+      property="og:image"
+      content="https://hamzabsst.vercel.app/assets/social-preview.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="../assets/favicon.svg" />
     <link rel="stylesheet" href="../styles.css" />
@@ -25,15 +34,17 @@
   <body>
     <a class="skip" href="#article">Skip to content</a>
     <header class="wrap navigation">
-      <a class="wordmark" href="../index.html" aria-label="Hamza Boussetta home">HB<span>.</span></a
-      ><a href="../index.html#work">← All projects</a><a href="../index.html#contact">Contact ↗</a>
+      <a class="wordmark" href="../index.html" aria-label="Hamza Boussetta home"
+        >HB<span>.</span></a
+      ><a href="../index.html#work">← All projects</a
+      ><a href="../index.html#contact">Contact ↗</a>
     </header>
     <main class="article-layout wrap" id="article">
       <div class="eyebrow">PROJECT STUDY / ALGORITHMS</div>
       <h1>push_swap</h1>
       <p class="article-lead">
-        Sort integers with two stacks and a constrained instruction set. Includes input validation,
-        small-stack strategies and a checker.
+        Sort integers with two stacks and a constrained instruction set.
+        Includes input validation, small-stack strategies and a checker.
       </p>
       <p class="card-tech">C · Linked lists · Cost models</p>
       <div class="article-actions">
@@ -43,43 +54,48 @@
           target="_blank"
           rel="noopener noreferrer"
           >Repository ↗</a
-        ><a class="button" href="../index.html#stack-demo">Try the browser model →</a>
+        ><a class="button" href="../index.html#stack-demo"
+          >Try the browser model →</a
+        >
       </div>
       <section>
         <h2>The problem</h2>
         <p>
-          Produce a valid sequence of stack instructions that sorts unique integers while keeping
-          the operation count low.
+          Produce a valid sequence of stack instructions that sorts unique
+          integers while keeping the operation count low.
         </p>
       </section>
       <section>
         <h2>A design decision</h2>
         <p>
-          Handle tiny stacks separately. For larger inputs, move values to B, assign target nodes
-          and select a low-cost reinsertion. Combine rotations when both stacks need the same
-          direction.
+          Handle tiny stacks separately. For larger inputs, move values to B,
+          assign target nodes and select a low-cost reinsertion. Combine
+          rotations when both stacks need the same direction.
         </p>
       </section>
       <section>
         <h2>A debugging edge case</h2>
         <p>
-          After reinsertion, stack A can be ordered circularly without its minimum at the top. The
-          final rotation aligns the minimum. Input validation also needs to reject duplicates and
-          values outside the integer range.
+          After reinsertion, stack A can be ordered circularly without its
+          minimum at the top. The final rotation aligns the minimum. Input
+          validation also needs to reject duplicates and values outside the
+          integer range.
         </p>
       </section>
       <section>
         <h2>A possible next iteration</h2>
         <p>
-          A useful next iteration would expand the benchmark corpus across seeds, input patterns and
-          boundary values, and track operation-count distributions.
+          A useful next iteration would expand the benchmark corpus across
+          seeds, input patterns and boundary values, and track operation-count
+          distributions.
         </p>
       </section>
       <section>
         <h2>Measured C operation counts</h2>
         <p>
-          Measured on 5 October 2026 on Linux x86_64. One shuffled permutation per size using Python
-          Random(42). Compiled with <code>cc -Wall -Werror -Wextra -g</code>; checked with the
+          Measured on 5 October 2026 on Linux x86_64. One shuffled permutation
+          per size using Python Random(42). Compiled with
+          <code>cc -Wall -Werror -Wextra -g</code>; checked with the
           repository’s checker.
         </p>
         <table>
@@ -121,8 +137,8 @@
       <section>
         <h2>Explore the implementation</h2>
         <p>
-          This study describes the source at commit <code>7238df5</code>. The edge case is a code
-          walkthrough, not a personal debugging story.
+          This study describes the source at commit <code>7238df5</code>. The
+          edge case is a code walkthrough, not a personal debugging story.
         </p>
         <a
           class="button"
@@ -135,8 +151,15 @@
     </main>
     <footer class="wrap">
       <a href="../index.html">Back to portfolio ↑</a
-      ><a href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer">GitHub ↗</a
-      ><a href="https://www.linkedin.com/in/hamzabsst/" target="_blank" rel="noopener noreferrer"
+      ><a
+        href="https://github.com/hamzabsst"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub ↗</a
+      ><a
+        href="https://www.linkedin.com/in/hamzabsst/"
+        target="_blank"
+        rel="noopener noreferrer"
         >LinkedIn ↗</a
       >
     </footer>

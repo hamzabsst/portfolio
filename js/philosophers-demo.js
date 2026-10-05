@@ -36,7 +36,8 @@ export function setupPhilosophers() {
     context.arc(centerX, centerY, radius - 22, 0, Math.PI * 2);
     context.stroke();
     table.philosophers.forEach((person) => {
-      const angle = (person.id / table.philosophers.length) * Math.PI * 2 - Math.PI / 2;
+      const angle =
+        (person.id / table.philosophers.length) * Math.PI * 2 - Math.PI / 2;
       const x = centerX + Math.cos(angle) * radius;
       const y = centerY + Math.sin(angle) * radius;
       context.fillStyle = colors[person.state];
@@ -50,7 +51,9 @@ export function setupPhilosophers() {
       context.fillText(String(person.id + 1), x, y);
       const forkAngle = angle + Math.PI / table.philosophers.length;
       context.fillStyle =
-        table.forks[(person.id + 1) % table.philosophers.length] === null ? '#7e768c' : '#bb92fa';
+        table.forks[(person.id + 1) % table.philosophers.length] === null
+          ? '#7e768c'
+          : '#bb92fa';
       context.fillRect(
         centerX + Math.cos(forkAngle) * radius - 3,
         centerY + Math.sin(forkAngle) * radius - 8,
@@ -106,7 +109,8 @@ export function setupPhilosophers() {
   play.addEventListener('click', () => {
     if (playing) return stop();
     if (!motionAllowed()) {
-      status.textContent = 'Motion is paused. Use Step to advance the simulation.';
+      status.textContent =
+        'Motion is paused. Use Step to advance the simulation.';
       return;
     }
     if (table.dead !== null) reset();
@@ -114,11 +118,13 @@ export function setupPhilosophers() {
     play.textContent = 'Pause';
     timeline.start();
   });
-  document.querySelector('[data-philosopher-step]').addEventListener('click', () => {
-    stop();
-    advance(250);
-    describe();
-  });
+  document
+    .querySelector('[data-philosopher-step]')
+    .addEventListener('click', () => {
+      stop();
+      advance(250);
+      describe();
+    });
   const observer = new ResizeObserver((entries) => {
     width = entries[0].contentRect.width;
     const scale = Math.min(devicePixelRatio || 1, 2);

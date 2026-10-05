@@ -26,7 +26,10 @@ for (let size = 2; size <= 40; size++) {
   const rotated = [...values.slice(1), values[0]];
   replay(rotated, buildStackTrace(rotated));
 }
-replay([-2147483648, 2147483647, 0, -1], buildStackTrace([-2147483648, 2147483647, 0, -1]));
+replay(
+  [-2147483648, 2147483647, 0, -1],
+  buildStackTrace([-2147483648, 2147483647, 0, -1]),
+);
 assert.equal(buildStackTrace([1, 2, 3]).length, 1);
 assert.deepEqual(parseNumbers('3, -2  0'), [3, -2, 0]);
 for (const invalid of ['', '1', '1 1', '1 a', '1 2.5', '1 2147483648'])
