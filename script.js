@@ -11,7 +11,7 @@
     document.querySelectorAll('#resume-link, [data-resume]').forEach((link) => {
       link.href = content.resume;
     });
-    document.querySelectorAll('#email-link, .header-email').forEach((link) => {
+    document.querySelectorAll('#email-link').forEach((link) => {
       link.textContent = content.email;
       link.href = `mailto:${content.email}`;
     });

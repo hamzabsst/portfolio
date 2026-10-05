@@ -17,10 +17,7 @@
     <link rel="canonical" href="https://hamzabsst.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Hamza Boussetta — C/C++ & Systems" />
-    <meta
-      property="og:description"
-      content="Explore my systems projects, interactive demos and engineering notes."
-    />
+    <meta property="og:description" content="Explore my systems projects and interactive demos." />
     <meta property="og:url" content="https://hamzabsst.vercel.app/" />
     <meta property="og:image" content="https://hamzabsst.vercel.app/assets/social-preview.png" />
     <meta property="og:image:width" content="1200" />
@@ -31,28 +28,20 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <script>
-      try {
-        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
-      } catch {}
-    </script>
+
     <link rel="stylesheet" href="features.css" />
     <script type="module" src="js/features.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="wrap navigation">
-      <a class="wordmark" href="#main" aria-label="Hamza Boussetta home">HB<span>.</span></a
-      ><a class="header-email" href="mailto:hb.hamza.bst@gmail.com">hb.hamza.bst@gmail.com</a>
+      <a class="wordmark" href="#main" aria-label="Hamza Boussetta home">HB<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a><a href="#work">Work</a
         ><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
-    <div class="utility-bar wrap" aria-label="Portfolio controls">
-      <button type="button" data-open-palette>Quick jump <kbd>Ctrl K</kbd></button>
-      <button type="button" data-theme-toggle aria-pressed="false">Light mode</button>
-    </div>
+
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-glow" aria-hidden="true"></div>
@@ -61,39 +50,6 @@
             <p class="hello">Hello! I’m</p>
             <h1 id="hero-title">HAMZA<br />BOUSSETTA<span>.</span></h1>
             <p class="intro-meta">Software engineering student<br />1337 Coding School · Rabat</p>
-
-            <div class="hero-terminal" aria-label="Interactive portfolio terminal">
-              <div class="mini-terminal-header">
-                <span aria-hidden="true">● ● ●</span><span>~/hamza</span>
-              </div>
-              <div
-                id="hero-terminal-output"
-                class="terminal-output"
-                role="log"
-                aria-live="polite"
-                aria-relevant="additions"
-              >
-                <div>Welcome. Type help to explore.</div>
-              </div>
-              <form id="hero-terminal-form" autocomplete="off">
-                <label for="hero-command">hamza $</label>
-                <input
-                  id="hero-command"
-                  name="command"
-                  placeholder="help"
-                  maxlength="150"
-                  spellcheck="false"
-                  autocapitalize="off"
-                  aria-label="Portfolio terminal command"
-                />
-                <button type="submit" aria-label="Run command">↵</button>
-              </form>
-              <div class="terminal-shortcuts">
-                <button type="button" data-terminal-command="help">help</button
-                ><button type="button" data-terminal-command="ls projects/">ls projects/</button>
-              </div>
-              <small>A navigation terminal. Try ↑ / ↓ and Tab.</small>
-            </div>
           </div>
           <figure class="hero-character">
             <svg
@@ -315,84 +271,6 @@
               </p>
             </div>
           </article>
-          <div class="section-head compact">
-            <h2>More <em>systems.</em></h2>
-            <p>Graphics, algorithms, concurrency and networking.</p>
-          </div>
-          <div class="project-grid">
-            <article class="project-card">
-              <div class="eyebrow">ALGORITHMS</div>
-              <h3>push_swap</h3>
-              <p>
-                Sort integers with two stacks and a constrained instruction set. Includes input
-                validation, small-stack strategies and a checker.
-              </p>
-              <span class="card-tech">C · Linked lists · Cost models</span>
-              <div class="card-links">
-                <a href="projects/push_swap.html">Project study →</a
-                ><a
-                  href="https://github.com/hamzabsst/push_swap"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source ↗</a
-                ><a href="#stack-demo">Try demo ↓</a>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="eyebrow">CONCURRENCY</div>
-              <h3>philosophers</h3>
-              <p>
-                Coordinate philosophers competing for forks, with protected meal state, a monitor,
-                and a process/semaphore bonus implementation.
-              </p>
-              <span class="card-tech">C · pthreads · Mutexes</span>
-              <div class="card-links">
-                <a href="projects/philosophers.html">Project study →</a
-                ><a
-                  href="https://github.com/hamzabsst/philosophers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source ↗</a
-                ><a href="#philosophers-demo">Try demo ↓</a>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="eyebrow">GRAPHICS</div>
-              <h3>cub3D</h3>
-              <p>
-                Render a textured first-person scene from a grid map using raycasting and DDA
-                traversal.
-              </p>
-              <span class="card-tech">C · Raycasting · MiniLibX</span>
-              <div class="card-links">
-                <a href="projects/cub3d.html">Project study →</a
-                ><a
-                  href="https://github.com/hamzabsst/cub3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source ↗</a
-                >
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="eyebrow">NETWORKING</div>
-              <h3>ft_irc</h3>
-              <p>
-                A multi-client IRC server with authentication, channels, messaging, operator
-                commands and buffered nonblocking socket I/O.
-              </p>
-              <span class="card-tech">C++98 · Sockets · Nonblocking I/O</span>
-              <div class="card-links">
-                <a href="projects/ft_irc.html">Project study →</a
-                ><a
-                  href="https://github.com/hamzabsst/ft_irc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source ↗</a
-                >
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -505,36 +383,7 @@
           </article>
         </div>
       </section>
-      <section class="notes-section wrap" id="notes" aria-labelledby="notes-title">
-        <div class="section-head">
-          <h2 id="notes-title">Under the <em>hood.</em></h2>
-          <p>Short notes on the ideas behind the projects.</p>
-        </div>
-        <div class="notes-grid">
-          <a class="note-card" href="notes/minishell-pipes.html"
-            ><span class="eyebrow">UNIX · 3 MIN READ</span>
-            <h3>How pipes work in Minishell</h3>
-            <p>Two file descriptors, multiple processes, and why closing the right end matters.</p>
-            <span>Read note →</span></a
-          ><a class="note-card" href="notes/docker-secrets.html"
-            ><span class="eyebrow">DOCKER · 3 MIN READ</span>
-            <h3>Docker secrets, explained</h3>
-            <p>How password files reach the right service in the Inception stack.</p>
-            <span>Read note →</span></a
-          >
-        </div>
-      </section>
-      <section class="activity-section wrap" aria-labelledby="activity-title">
-        <div class="section-head compact">
-          <h2 id="activity-title">On <em>GitHub.</em></h2>
-          <p data-github-status role="status">Loading public repository activity…</p>
-        </div>
-        <div data-github-activity class="activity-grid">
-          <article><a href="https://github.com/hamzabsst/minishell">minishell ↗</a></article>
-          <article><a href="https://github.com/hamzabsst/inception">inception ↗</a></article>
-          <article><a href="https://github.com/hamzabsst/ft_irc">ft_irc ↗</a></article>
-        </div>
-      </section>
+
       <section class="wrap about" id="about" aria-labelledby="about-title">
         <div>
           <div class="eyebrow">ABOUT ME</div>
@@ -598,15 +447,5 @@
         </div>
       </section>
     </main>
-    <dialog id="command-palette" aria-labelledby="palette-title">
-      <div class="palette-head">
-        <h2 id="palette-title">Quick jump</h2>
-        <button type="button" data-close-palette aria-label="Close quick jump">×</button>
-      </div>
-      <label class="sr-only" for="palette-search">Search commands</label
-      ><input id="palette-search" placeholder="Projects, résumé, email…" autocomplete="off" />
-      <div data-command-results class="palette-results"></div>
-      <p class="palette-hint">↑ ↓ select · Enter open · Esc close</p>
-    </dialog>
   </body>
 </html>
