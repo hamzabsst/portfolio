@@ -316,7 +316,7 @@ nav a {
 }
 /* Projects */
 .work-section {
-  padding: 115px 0 85px;
+  padding: 115px 0 0;
 }
 .section-head {
   display: flex;
@@ -353,6 +353,9 @@ em {
   margin-bottom: 75px;
   padding-bottom: 75px;
   border-bottom: 1px solid var(--line);
+}
+.work-section .project:last-child {
+  margin-bottom: 0;
 }
 .project-index {
   font:
@@ -900,7 +903,7 @@ footer > span {
     padding: 0 25px;
   }
   .work-section {
-    padding: 70px 0;
+    padding: 70px 0 0;
   }
   .section-head {
     display: block;
