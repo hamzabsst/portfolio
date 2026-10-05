@@ -14,6 +14,8 @@ character, selected projects, and two browser demos.
 - `content.js`: email, résumé, project descriptions and Dockerfile snippets
 - `script.js` / `eye-tracking.js`: content, scroll reveals, character and motion
   control
+- `intro-story.js` / `intro-story.css`: shared character transition from the
+  hero to About, with a normal-flow mobile and reduced-motion fallback
 - `js/features.js`: entry point for retained interactive features
 - `js/ui.js`: clipboard feedback
 - `js/motion.js`: shared pause, visibility and reduced-motion policy
@@ -30,8 +32,8 @@ http://localhost:8765/.
 
 ## Checks
 
-Run `node tests/models.test.mjs` and `node tests/motion.test.mjs` (Node 22+). No
-package install is required.
+Run `node tests/models.test.mjs`, `node tests/motion.test.mjs` and
+`node tests/intro-story.test.mjs` (Node 22+). No package install is required.
 
 Browser demos are JavaScript models, labeled separately from the C
 implementations. The push_swap study includes measured native C operation counts

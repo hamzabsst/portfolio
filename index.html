@@ -13,6 +13,8 @@
     <script src="content.js" defer></script>
     <script src="eye-tracking.js" defer></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="intro-story.css" />
+    <script src="intro-story.js" defer></script>
 
     <link rel="canonical" href="https://hamzabsst.me/" />
     <meta property="og:type" content="website" />
@@ -51,151 +53,206 @@
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="hero-layout wrap">
-          <div class="hero-intro">
-            <p class="hello">Hello! I’m</p>
-            <h1 id="hero-title">HAMZA<br />BOUSSETTA<span>.</span></h1>
-            <p class="intro-meta">
-              Software engineering student<br />1337 Coding School · Rabat
-            </p>
-          </div>
-          <figure class="hero-character">
-            <svg
-              class="character-art"
-              viewBox="0 0 1199 1312"
-              preserveAspectRatio="xMidYMax meet"
-              aria-hidden="true"
-            >
-              <defs>
-                <clipPath id="eye-left">
+      <div class="intro-story">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-layout wrap">
+            <div class="hero-intro">
+              <p class="hello">Hello! I’m</p>
+              <h1 id="hero-title">HAMZA<br />BOUSSETTA<span>.</span></h1>
+              <p class="intro-meta">
+                Software engineering student<br />1337 Coding School · Rabat
+              </p>
+            </div>
+            <figure class="hero-character">
+              <svg
+                class="character-art"
+                viewBox="0 0 1199 1312"
+                preserveAspectRatio="xMidYMax meet"
+                aria-hidden="true"
+              >
+                <defs>
+                  <clipPath id="eye-left">
+                    <path
+                      d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"
+                    />
+                  </clipPath>
+                  <clipPath id="eye-right">
+                    <path
+                      d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"
+                    />
+                  </clipPath>
+                  <radialGradient id="iris-brown">
+                    <stop stop-color="#713318" />
+                    <stop offset=".7" stop-color="#512412" />
+                    <stop offset="1" stop-color="#24160f" />
+                  </radialGradient>
+                  <linearGradient id="eye-white" x2="0" y2="1">
+                    <stop stop-color="#d6c6d1" />
+                    <stop offset=".5" stop-color="#fff8f5" />
+                    <stop offset="1" stop-color="#ddcad8" />
+                  </linearGradient>
+                </defs>
+                <image
+                  href="assets/developer-goatee.png"
+                  width="1199"
+                  height="1312"
+                />
+                <g clip-path="url(#eye-left)">
                   <path
+                    fill="url(#eye-white)"
                     d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"
                   />
-                </clipPath>
-                <clipPath id="eye-right">
+                  <g
+                    data-eye-pupil
+                    data-eye-x="503"
+                    data-eye-y="344"
+                    data-eye-radius="6"
+                    transform="translate(503 344)"
+                  >
+                    <circle r="19" fill="url(#iris-brown)" />
+                    <circle r="11" fill="#080605" />
+                    <circle cx="-6" cy="-8" r="4" fill="#fff" />
+                    <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
+                  </g>
+                </g>
+                <g clip-path="url(#eye-right)">
                   <path
+                    fill="url(#eye-white)"
                     d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"
                   />
-                </clipPath>
-                <radialGradient id="iris-brown">
-                  <stop stop-color="#713318" />
-                  <stop offset=".7" stop-color="#512412" />
-                  <stop offset="1" stop-color="#24160f" />
-                </radialGradient>
-                <linearGradient id="eye-white" x2="0" y2="1">
-                  <stop stop-color="#d6c6d1" />
-                  <stop offset=".5" stop-color="#fff8f5" />
-                  <stop offset="1" stop-color="#ddcad8" />
-                </linearGradient>
-              </defs>
-              <image
-                href="assets/developer-goatee.png"
-                width="1199"
-                height="1312"
-              />
-              <g clip-path="url(#eye-left)">
-                <path
-                  fill="url(#eye-white)"
-                  d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"
-                />
-                <g
-                  data-eye-pupil
-                  data-eye-x="503"
-                  data-eye-y="344"
-                  data-eye-radius="6"
-                  transform="translate(503 344)"
-                >
-                  <circle r="19" fill="url(#iris-brown)" />
-                  <circle r="11" fill="#080605" />
-                  <circle cx="-6" cy="-8" r="4" fill="#fff" />
-                  <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
+                  <g
+                    data-eye-pupil
+                    data-eye-x="650"
+                    data-eye-y="324"
+                    data-eye-radius="6"
+                    transform="translate(650 324)"
+                  >
+                    <circle r="19" fill="url(#iris-brown)" />
+                    <circle r="11" fill="#080605" />
+                    <circle cx="-6" cy="-8" r="4" fill="#fff" />
+                    <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
+                  </g>
                 </g>
-              </g>
-              <g clip-path="url(#eye-right)">
-                <path
-                  fill="url(#eye-white)"
-                  d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"
-                />
-                <g
-                  data-eye-pupil
-                  data-eye-x="650"
-                  data-eye-y="324"
-                  data-eye-radius="6"
-                  transform="translate(650 324)"
-                >
-                  <circle r="19" fill="url(#iris-brown)" />
-                  <circle r="11" fill="#080605" />
-                  <circle cx="-6" cy="-8" r="4" fill="#fff" />
-                  <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
-                </g>
-              </g>
-            </svg>
-            <div class="character-floor" aria-hidden="true"></div>
-          </figure>
-          <div class="hero-role">
-            <p>Building with</p>
-            <div class="role-lines">
-              <span>C/C++</span><span class="outline">SYSTEMS</span>
+              </svg>
+              <div class="character-floor" aria-hidden="true"></div>
+            </figure>
+            <div class="hero-role">
+              <p>Building with</p>
+              <div class="role-lines">
+                <span>C/C++</span><span class="outline">SYSTEMS</span>
+              </div>
+              <p class="role-caption">Processes. Memory. Infrastructure.</p>
+              <a class="hero-cta" href="#work"
+                >Explore my work <span aria-hidden="true">↘</span></a
+              >
             </div>
-            <p class="role-caption">Processes. Memory. Infrastructure.</p>
-            <a class="hero-cta" href="#work"
-              >Explore my work <span aria-hidden="true">↘</span></a
-            >
           </div>
-        </div>
-        <div class="hero-bottom wrap">
-          <div class="hero-socials" aria-label="Social profiles">
+          <div class="hero-bottom wrap">
+            <div class="hero-socials" aria-label="Social profiles">
+              <a
+                class="social-link"
+                aria-label="GitHub profile"
+                href="https://github.com/hamzabsst"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.7 11.7 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"
+                  /></svg
+                ><span>GitHub</span></a
+              ><a
+                class="social-link"
+                href="https://www.linkedin.com/in/hamzabsst/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                ><svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path
+                    fill="currentColor"
+                    d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96C2 21.32 2.69 22 3.55 22h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.46 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.79-1.53 2.98 0 3.58 1.96 3.58 4.5v5.28Z"
+                  /></svg
+                ><span>LinkedIn</span></a
+              >
+            </div>
+            <a class="scroll-cue" href="#about"
+              ><span class="scroll-line" aria-hidden="true"></span>SCROLL TO
+              EXPLORE</a
+            >
+            <div class="hero-actions">
+              <button
+                class="motion-control"
+                type="button"
+                aria-pressed="false"
+                aria-label="Pause animation"
+              >
+                <span aria-hidden="true">Ⅱ</span
+                ><span class="motion-label">Pause motion</span></button
+              ><a
+                class="resume-hero"
+                data-resume
+                target="_blank"
+                rel="noopener noreferrer"
+                >RÉSUMÉ <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="wrap about" id="about" aria-labelledby="about-title">
+          <div class="about-portrait" aria-hidden="true">
+            <img
+              src="assets/developer-goatee.png"
+              width="1199"
+              height="1312"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="about-heading">
+            <div class="eyebrow">ABOUT ME</div>
+            <h2 id="about-title">
+              A mathematical foundation.<br /><em>A practical approach.</em>
+            </h2>
+          </div>
+          <div class="about-content">
+            <p>
+              My background connects mathematics and computer science with
+              hands-on software development. At 1337, I learn through projects,
+              peer review and collaborative work.
+            </p>
+            <p>
+              I’ve worked on parsing, processes, memory management and
+              containerized services. I’m looking for opportunities to apply
+              that foundation, keep learning and contribute to a team.
+            </p>
+            <div class="education">
+              <div>
+                <span>2024 — present</span>
+                <h3>1337 Coding School · UM6P</h3>
+                <p>Software Engineering Program</p>
+              </div>
+              <div>
+                <span>2021 — 2024</span>
+                <h3>ENS, Tetouan</h3>
+                <p>Degree in Mathematics and Computer Science</p>
+              </div>
+            </div>
+            <div class="toolbox">
+              <h3>Tools I work with</h3>
+              <p>C · C++ · Python · Docker · Git · Valgrind</p>
+              <p class="languages">Arabic · English · French</p>
+            </div>
             <a
-              class="social-link"
-              aria-label="GitHub profile"
-              href="https://github.com/hamzabsst"
+              class="text-link"
+              id="resume-link"
               target="_blank"
               rel="noopener noreferrer"
-              ><svg aria-hidden="true" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.7 11.7 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"
-                /></svg
-              ><span>GitHub</span></a
-            ><a
-              class="social-link"
-              href="https://www.linkedin.com/in/hamzabsst/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              ><svg aria-hidden="true" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96C2 21.32 2.69 22 3.55 22h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.46 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.29 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.79-1.53 2.98 0 3.58 1.96 3.58 4.5v5.28Z"
-                /></svg
-              ><span>LinkedIn</span></a
+              >View résumé <span aria-hidden="true">↗</span></a
             >
           </div>
-          <a class="scroll-cue" href="#work"
-            ><span class="scroll-line" aria-hidden="true"></span>SCROLL TO
-            EXPLORE</a
-          >
-          <div class="hero-actions">
-            <button
-              class="motion-control"
-              type="button"
-              aria-pressed="false"
-              aria-label="Pause animation"
-            >
-              <span aria-hidden="true">Ⅱ</span
-              ><span class="motion-label">Pause motion</span></button
-            ><a
-              class="resume-hero"
-              data-resume
-              target="_blank"
-              rel="noopener noreferrer"
-              >RÉSUMÉ <span aria-hidden="true">↗</span></a
-            >
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <div class="ticker" aria-hidden="true">
         <div>
           C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER
@@ -546,50 +603,6 @@
         </div>
       </section>
 
-      <section class="wrap about" id="about" aria-labelledby="about-title">
-        <div>
-          <div class="eyebrow">ABOUT ME</div>
-          <h2 id="about-title">
-            A mathematical foundation.<br /><em>A practical approach.</em>
-          </h2>
-        </div>
-        <div class="about-content">
-          <p>
-            My background connects mathematics and computer science with
-            hands-on software development. At 1337, I learn through projects,
-            peer review and collaborative work.
-          </p>
-          <p>
-            I’ve worked on parsing, processes, memory management and
-            containerized services. I’m looking for opportunities to apply that
-            foundation, keep learning and contribute to a team.
-          </p>
-          <div class="education">
-            <div>
-              <span>2024 — present</span>
-              <h3>1337 Coding School · UM6P</h3>
-              <p>Software Engineering Program</p>
-            </div>
-            <div>
-              <span>2021 — 2024</span>
-              <h3>ENS, Tetouan</h3>
-              <p>Degree in Mathematics and Computer Science</p>
-            </div>
-          </div>
-          <div class="toolbox">
-            <h3>Tools I work with</h3>
-            <p>C · C++ · Python · Docker · Git · Valgrind</p>
-            <p class="languages">Arabic · English · French</p>
-          </div>
-          <a
-            class="text-link"
-            id="resume-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View résumé <span aria-hidden="true">↗</span></a
-          >
-        </div>
-      </section>
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="wrap">
           <div class="eyebrow">LET’S CONNECT</div>

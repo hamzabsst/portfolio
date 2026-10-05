@@ -33,7 +33,7 @@
     );
 
     const sections = document.querySelectorAll(
-      '.project, .about > div, .section-head, .contact h2',
+      '.project, .section-head, .contact h2',
     );
     sections.forEach((section) => {
       section.classList.add('reveal-ready');
