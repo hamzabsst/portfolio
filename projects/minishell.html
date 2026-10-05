@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minishell — Hamza Boussetta</title>
+    <meta
+      name="description"
+      content="A Unix shell built in C, with command execution, built-ins, pipes, redirections, quoting and environment variable expansion."
+    />
+    <link rel="canonical" href="https://hamzabsst.vercel.app/projects/minishell.html" />
+    <meta property="og:title" content="Minishell — Hamza Boussetta" />
+    <meta
+      property="og:description"
+      content="A Unix shell built in C, with command execution, built-ins, pipes, redirections, quoting and environment variable expansion."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hamzabsst.vercel.app/projects/minishell.html" />
+    <meta property="og:image" content="https://hamzabsst.vercel.app/assets/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../features.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to content</a>
+    <header class="wrap navigation">
+      <a class="wordmark" href="../index.html" aria-label="Hamza Boussetta home">HB<span>.</span></a
+      ><a href="../index.html#work">← All projects</a><a href="../index.html#contact">Contact ↗</a>
+    </header>
+    <main class="article-layout wrap" id="article">
+      <div class="eyebrow">PROJECT STUDY / UNIX SYSTEMS</div>
+      <h1>Minishell</h1>
+      <p class="article-lead">
+        A Unix shell built in C, with command execution, built-ins, pipes, redirections, quoting and
+        environment variable expansion.
+      </p>
+      <p class="card-tech">C · Processes · Parsing</p>
+      <div class="article-actions">
+        <a
+          class="button"
+          href="https://github.com/hamzabsst/minishell"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Repository ↗</a
+        ><a class="button" href="../notes/minishell-pipes.html">Related note →</a>
+      </div>
+      <section>
+        <h2>The problem</h2>
+        <p>
+          Turn a command line into predictable shell behavior, while coordinating parsing,
+          expansion, redirections and child processes.
+        </p>
+      </section>
+      <section>
+        <h2>A design decision</h2>
+        <p>
+          Keep parsing and execution separate. The execution layer walks the command list, creates
+          pipes for connected commands, and uses fork and dup2 to wire each child into the pipeline.
+        </p>
+      </section>
+      <section>
+        <h2>A debugging edge case</h2>
+        <p>
+          A reader cannot see EOF while any process still holds a pipe write end. The parent closes
+          each write end after forking, while children close the unused read end. This makes
+          descriptor ownership a useful debugging checklist.
+        </p>
+      </section>
+      <section>
+        <h2>A possible next iteration</h2>
+        <p>
+          A useful next iteration would automate Bash comparison tests for quoted variables,
+          heredocs, exit status and broken pipelines.
+        </p>
+      </section>
+      <section>
+        <h2>Explore the implementation</h2>
+        <p>
+          This study describes the source at commit <code>ea06a8f</code>. The edge case is a code
+          walkthrough, not a personal debugging story.
+        </p>
+        <a
+          class="button"
+          href="https://github.com/hamzabsst/minishell/blob/ea06a8f91d31b2cf4592636bb5acb7b05d89b9d5/src/execution/execute/parent.c"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Read src/execution/execute/parent.c ↗</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      <a href="../index.html">Back to portfolio ↑</a
+      ><a href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer">GitHub ↗</a
+      ><a
+        href="https://www.linkedin.com/in/hamza-boussetta-830155220/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn ↗</a
+      >
+    </footer>
+  </body>
+</html>

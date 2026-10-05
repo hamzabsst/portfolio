@@ -1,57 +1,612 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hamza Boussetta — Software Engineering</title>
-  <meta name="description" content="Hamza Boussetta, software engineering student at 1337 Coding School. Selected work in C, Unix systems and Docker.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%2309080c'/%3E%3Ctext x='20' y='27' text-anchor='middle' font-family='serif' font-size='24' fill='%23bb92fa'%3EH%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="content.js" defer></script>
-  <script src="eye-tracking.js" defer></script>
-  <script src="script.js" defer></script>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="wrap navigation"><a class="wordmark" href="#main" aria-label="Hamza Boussetta home">HB<span>.</span></a><a class="header-email" href="mailto:hb.hamza.bst@gmail.com">hb.hamza.bst@gmail.com</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav></header>
-<main id="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-layout wrap">
-      <div class="hero-intro"><p class="hello">Hello! I’m</p><h1 id="hero-title">HAMZA<br>BOUSSETTA<span>.</span></h1><p class="intro-meta">Software engineering student<br>1337 Coding School · Rabat</p></div>
-      <figure class="hero-character"><svg class="character-art" viewBox="0 0 1199 1312" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-  <defs>
-    <clipPath id="eye-left"><path d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"/></clipPath>
-    <clipPath id="eye-right"><path d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"/></clipPath>
-    <radialGradient id="iris-brown"><stop stop-color="#713318"/><stop offset=".7" stop-color="#512412"/><stop offset="1" stop-color="#24160f"/></radialGradient>
-    <linearGradient id="eye-white" x2="0" y2="1"><stop stop-color="#d6c6d1"/><stop offset=".5" stop-color="#fff8f5"/><stop offset="1" stop-color="#ddcad8"/></linearGradient>
-  </defs>
-  <image href="assets/developer-goatee.png" width="1199" height="1312"/>
-  <g clip-path="url(#eye-left)">
-    <path fill="url(#eye-white)" d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"/>
-    <g data-eye-pupil data-eye-x="503" data-eye-y="344" data-eye-radius="6" transform="translate(503 344)">
-      <circle r="19" fill="url(#iris-brown)"/><circle r="11" fill="#080605"/><circle cx="-6" cy="-8" r="4" fill="#fff"/><circle cx="5" cy="4" r="1.7" fill="#e3cac0"/>
-    </g>
-  </g>
-  <g clip-path="url(#eye-right)">
-    <path fill="url(#eye-white)" d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"/>
-    <g data-eye-pupil data-eye-x="650" data-eye-y="324" data-eye-radius="6" transform="translate(650 324)">
-      <circle r="19" fill="url(#iris-brown)"/><circle r="11" fill="#080605"/><circle cx="-6" cy="-8" r="4" fill="#fff"/><circle cx="5" cy="4" r="1.7" fill="#e3cac0"/>
-    </g>
-  </g>
-</svg><div class="character-floor" aria-hidden="true"></div></figure>
-      <div class="hero-role"><p>Building with</p><div class="role-lines"><span>C/C++</span><span class="outline">SYSTEMS</span></div><p class="role-caption">Processes. Memory. Infrastructure.</p><a class="hero-cta" href="#work">Explore my work <span aria-hidden="true">↘</span></a></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hamza Boussetta — Software Engineering</title>
+    <meta
+      name="description"
+      content="Hamza Boussetta, software engineering student at 1337 Coding School. Selected work in C, Unix systems and Docker."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="content.js" defer></script>
+    <script src="eye-tracking.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <link rel="canonical" href="https://hamzabsst.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hamza Boussetta — C/C++ & Systems" />
+    <meta
+      property="og:description"
+      content="Explore my systems projects, interactive demos and engineering notes."
+    />
+    <meta property="og:url" content="https://hamzabsst.vercel.app/" />
+    <meta property="og:image" content="https://hamzabsst.vercel.app/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Hamza Boussetta. C/C++, Unix systems and infrastructure."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="features.css" />
+    <script type="module" src="js/features.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="wrap navigation">
+      <a class="wordmark" href="#main" aria-label="Hamza Boussetta home">HB<span>.</span></a
+      ><a class="header-email" href="mailto:hb.hamza.bst@gmail.com">hb.hamza.bst@gmail.com</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#work">Work</a
+        ><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <div class="utility-bar wrap" aria-label="Portfolio controls">
+      <button type="button" data-open-palette>Quick jump <kbd>Ctrl K</kbd></button>
+      <button type="button" data-theme-toggle aria-pressed="false">Light mode</button>
     </div>
-    <div class="hero-bottom wrap"><a class="github-social" href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.7 11.7 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"/></svg><span>GitHub</span></a><a class="scroll-cue" href="#work"><span class="scroll-line" aria-hidden="true"></span>SCROLL TO EXPLORE</a><div class="hero-actions"><button class="motion-control" type="button" aria-pressed="false" aria-label="Pause animation"><span aria-hidden="true">Ⅱ</span><span class="motion-label">Pause motion</span></button><a class="resume-hero" data-resume target="_blank" rel="noopener noreferrer">RÉSUMÉ <span aria-hidden="true">↗</span></a></div></div>
-  </section>
-  <div class="ticker" aria-hidden="true"><div>C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER <span>✳</span> LEARNING BY BUILDING <span>✳</span> C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER <span>✳</span> LEARNING BY BUILDING <span>✳</span></div></div>
-  <section class="work-section" id="work" aria-labelledby="work-title"><div class="wrap">
-    <div class="section-head"><h2 id="work-title">My <em>work.</em></h2><p>Projects built through the 42 curriculum.</p></div>
-    <article class="project" id="minishell"><div class="project-copy"><div class="project-index">01 / UNIX SYSTEMS</div><h3>Minishell</h3><p class="project-intro">A closer look at what happens<br>after you press Enter.</p><p id="minishell-description"></p><ul class="skills" aria-label="Minishell technologies"><li>C</li><li>Unix</li><li>Valgrind</li></ul><a class="text-link" id="minishell-link" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><details><summary>What the project covers <span aria-hidden="true">+</span></summary><p>Command execution, built-ins, quoting, environment variables, pipes, redirections and signals. The project also includes memory checks with Valgrind.</p></details></div><div class="terminal visual" aria-label="Example of a shell pipeline"><div class="terminal-bar"><span></span><span></span><span></span><p>minishell — command example</p></div><div class="terminal-content"><p><span class="prompt">hamza $</span> ls -l | grep ".c" &gt; files.txt</p><p><span class="prompt">hamza $</span> cat &lt; files.txt</p><p class="terminal-muted">parse → expand → execute</p><p><span class="prompt">hamza $</span> <span class="cursor" aria-hidden="true"></span></p></div><div class="terminal-caption">One command. Several moving parts.</div></div></article>
-    <article class="project" id="inception"><div class="project-copy"><div class="project-index">02 / INFRASTRUCTURE</div><h3>Inception</h3><p class="project-intro">Separate services.<br>A working whole.</p><p id="inception-description"></p><ul class="skills" aria-label="Inception technologies"><li>Docker</li><li>NGINX</li><li>MariaDB</li></ul><a class="text-link" id="inception-link" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a><details><summary>Architecture &amp; decisions <span aria-hidden="true">+</span></summary><p>Custom Dockerfiles, an isolated bridge network, persistent volumes and Docker Secrets. The repository also includes Redis caching, Adminer and a static showcase site.</p></details></div><div class="architecture visual" aria-label="Inception core architecture: HTTPS connects to NGINX, then WordPress with PHP-FPM, then MariaDB on an isolated Docker network"><div class="architecture-label">CORE SERVICE ARCHITECTURE</div><div class="https">HTTPS / 443</div><div class="connector"></div><div class="service"><span>01</span><strong>NGINX</strong><small>Web server</small></div><div class="connector"></div><div class="service"><span>02</span><strong>WordPress</strong><small>PHP-FPM</small></div><div class="connector"></div><div class="service"><span>03</span><strong>MariaDB</strong><small>Database</small></div><div class="architecture-foot">Isolated network · Persistent storage</div></div></article>
-    <div class="more-work"><h3>More from my GitHub</h3><div><a href="https://github.com/hamzabsst/cub3D" target="_blank" rel="noopener noreferrer">cub3D <span aria-hidden="true">↗</span></a><a href="https://github.com/hamzabsst/philosophers" target="_blank" rel="noopener noreferrer">philosophers <span aria-hidden="true">↗</span></a><a href="https://github.com/hamzabsst/push_swap" target="_blank" rel="noopener noreferrer">push_swap <span aria-hidden="true">↗</span></a></div></div>
-  </div></section>
-  <section class="wrap about" id="about" aria-labelledby="about-title"><div><div class="eyebrow">ABOUT ME</div><h2 id="about-title">A mathematical foundation.<br><em>A practical approach.</em></h2></div><div class="about-content"><p>My background connects mathematics and computer science with hands-on software development. At 1337, I learn through projects, peer review and collaborative work.</p><p>I’ve worked on parsing, processes, memory management and containerized services. I’m looking for opportunities to apply that foundation, keep learning and contribute to a team.</p><div class="education"><div><span>2024 — present</span><h3>1337 Coding School · UM6P</h3><p>Software Engineering Program</p></div><div><span>2021 — 2024</span><h3>ENS, Tetouan</h3><p>Degree in Mathematics and Computer Science</p></div></div><div class="toolbox"><h3>Tools I work with</h3><p>C · C++ · Python · Docker · Git · Valgrind</p><p class="languages">Arabic · English · French</p></div><a class="text-link" id="resume-link" target="_blank" rel="noopener noreferrer">View résumé <span aria-hidden="true">↗</span></a></div></section>
-  <section class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="eyebrow">LET’S CONNECT</div><h2 id="contact-title">Let’s build<br><em>what’s next.</em></h2><p>I’d like to hear about C/C++ and systems engineering roles and internships.</p><a class="email" id="email-link"></a><footer><span>Hamza Boussetta</span><a href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#main">Back to top ↑</a></footer></div></section>
-</main>
-</body>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-layout wrap">
+          <div class="hero-intro">
+            <p class="hello">Hello! I’m</p>
+            <h1 id="hero-title">HAMZA<br />BOUSSETTA<span>.</span></h1>
+            <p class="intro-meta">Software engineering student<br />1337 Coding School · Rabat</p>
+
+            <div class="hero-terminal" aria-label="Interactive portfolio terminal">
+              <div class="mini-terminal-header">
+                <span aria-hidden="true">● ● ●</span><span>~/hamza</span>
+              </div>
+              <div
+                id="hero-terminal-output"
+                class="terminal-output"
+                role="log"
+                aria-live="polite"
+                aria-relevant="additions"
+              >
+                <div>Welcome. Type help to explore.</div>
+              </div>
+              <form id="hero-terminal-form" autocomplete="off">
+                <label for="hero-command">hamza $</label>
+                <input
+                  id="hero-command"
+                  name="command"
+                  placeholder="help"
+                  maxlength="150"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  aria-label="Portfolio terminal command"
+                />
+                <button type="submit" aria-label="Run command">↵</button>
+              </form>
+              <div class="terminal-shortcuts">
+                <button type="button" data-terminal-command="help">help</button
+                ><button type="button" data-terminal-command="ls projects/">ls projects/</button>
+              </div>
+              <small>A navigation terminal. Try ↑ / ↓ and Tab.</small>
+            </div>
+          </div>
+          <figure class="hero-character">
+            <svg
+              class="character-art"
+              viewBox="0 0 1199 1312"
+              preserveAspectRatio="xMidYMax meet"
+              aria-hidden="true"
+            >
+              <defs>
+                <clipPath id="eye-left">
+                  <path d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z" />
+                </clipPath>
+                <clipPath id="eye-right">
+                  <path d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z" />
+                </clipPath>
+                <radialGradient id="iris-brown">
+                  <stop stop-color="#713318" />
+                  <stop offset=".7" stop-color="#512412" />
+                  <stop offset="1" stop-color="#24160f" />
+                </radialGradient>
+                <linearGradient id="eye-white" x2="0" y2="1">
+                  <stop stop-color="#d6c6d1" />
+                  <stop offset=".5" stop-color="#fff8f5" />
+                  <stop offset="1" stop-color="#ddcad8" />
+                </linearGradient>
+              </defs>
+              <image href="assets/developer-goatee.png" width="1199" height="1312" />
+              <g clip-path="url(#eye-left)">
+                <path
+                  fill="url(#eye-white)"
+                  d="M462 353 Q478 325 503 325 Q526 323 540 351 Q502 374 462 353Z"
+                />
+                <g
+                  data-eye-pupil
+                  data-eye-x="503"
+                  data-eye-y="344"
+                  data-eye-radius="6"
+                  transform="translate(503 344)"
+                >
+                  <circle r="19" fill="url(#iris-brown)" />
+                  <circle r="11" fill="#080605" />
+                  <circle cx="-6" cy="-8" r="4" fill="#fff" />
+                  <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
+                </g>
+              </g>
+              <g clip-path="url(#eye-right)">
+                <path
+                  fill="url(#eye-white)"
+                  d="M618 338 Q628 309 650 307 Q680 302 692 326 Q657 349 618 338Z"
+                />
+                <g
+                  data-eye-pupil
+                  data-eye-x="650"
+                  data-eye-y="324"
+                  data-eye-radius="6"
+                  transform="translate(650 324)"
+                >
+                  <circle r="19" fill="url(#iris-brown)" />
+                  <circle r="11" fill="#080605" />
+                  <circle cx="-6" cy="-8" r="4" fill="#fff" />
+                  <circle cx="5" cy="4" r="1.7" fill="#e3cac0" />
+                </g>
+              </g>
+            </svg>
+            <div class="character-floor" aria-hidden="true"></div>
+          </figure>
+          <div class="hero-role">
+            <p>Building with</p>
+            <div class="role-lines"><span>C/C++</span><span class="outline">SYSTEMS</span></div>
+            <p class="role-caption">Processes. Memory. Infrastructure.</p>
+            <a class="hero-cta" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <div class="hero-bottom wrap">
+          <a
+            class="github-social"
+            href="https://github.com/hamzabsst"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6.1 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.7 11.7 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.8-5.5 6.1.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"
+              /></svg
+            ><span>GitHub</span></a
+          ><a class="scroll-cue" href="#work"
+            ><span class="scroll-line" aria-hidden="true"></span>SCROLL TO EXPLORE</a
+          >
+          <div class="hero-actions">
+            <button
+              class="motion-control"
+              type="button"
+              aria-pressed="false"
+              aria-label="Pause animation"
+            >
+              <span aria-hidden="true">Ⅱ</span
+              ><span class="motion-label">Pause motion</span></button
+            ><a class="resume-hero" data-resume target="_blank" rel="noopener noreferrer"
+              >RÉSUMÉ <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <div>
+          C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER <span>✳</span> LEARNING BY
+          BUILDING <span>✳</span> C / C++ <span>✳</span> UNIX SYSTEMS <span>✳</span> DOCKER
+          <span>✳</span> LEARNING BY BUILDING <span>✳</span>
+        </div>
+      </div>
+      <section class="work-section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="work-title">My <em>work.</em></h2>
+            <p>Projects built through the 42 curriculum.</p>
+          </div>
+          <article class="project" id="minishell">
+            <div class="project-copy">
+              <div class="project-index">01 / UNIX SYSTEMS</div>
+              <h3>Minishell</h3>
+              <p class="project-intro">A closer look at what happens<br />after you press Enter.</p>
+              <p id="minishell-description"></p>
+              <ul class="skills" aria-label="Minishell technologies">
+                <li>C</li>
+                <li>Unix</li>
+                <li>Valgrind</li>
+              </ul>
+              <a class="text-link" id="minishell-link" target="_blank" rel="noopener noreferrer"
+                >Explore repository <span aria-hidden="true">↗</span></a
+              >
+              <a class="study-link" href="projects/minishell.html">Read project study →</a>
+              <details>
+                <summary>What the project covers <span aria-hidden="true">+</span></summary>
+                <p>
+                  Command execution, built-ins, quoting, environment variables, pipes, redirections
+                  and signals. The project also includes memory checks with Valgrind.
+                </p>
+              </details>
+            </div>
+            <div class="terminal visual" aria-label="Example of a shell pipeline">
+              <div class="terminal-bar">
+                <span></span><span></span><span></span>
+                <p>minishell — command example</p>
+              </div>
+              <div class="terminal-content">
+                <p>
+                  <span class="prompt">hamza $</span>
+                  <span data-shell-command>ls -l | grep ".c" &gt; files.txt</span>
+                </p>
+                <div class="shell-stages" aria-label="Pipeline stages">
+                  <span data-shell-stage>parse</span><span aria-hidden="true">→</span
+                  ><span data-shell-stage>expand</span><span aria-hidden="true">→</span
+                  ><span data-shell-stage>execute</span>
+                </div>
+                <p data-shell-explanation class="terminal-muted">
+                  A sample pipeline, from input to execution.
+                </p>
+                <button class="button" type="button" data-run-shell>Run walkthrough</button>
+              </div>
+              <div class="terminal-caption">Animated explanation · the C shell runs locally.</div>
+            </div>
+          </article>
+          <article class="project" id="inception">
+            <div class="project-copy">
+              <div class="project-index">02 / INFRASTRUCTURE</div>
+              <h3>Inception</h3>
+              <p class="project-intro">Separate services.<br />A working whole.</p>
+              <p id="inception-description"></p>
+              <ul class="skills" aria-label="Inception technologies">
+                <li>Docker</li>
+                <li>NGINX</li>
+                <li>MariaDB</li>
+              </ul>
+              <a class="text-link" id="inception-link" target="_blank" rel="noopener noreferrer"
+                >Explore repository <span aria-hidden="true">↗</span></a
+              >
+              <a class="study-link" href="projects/inception.html">Read project study →</a>
+              <details>
+                <summary>Architecture &amp; decisions <span aria-hidden="true">+</span></summary>
+                <p>
+                  Custom Dockerfiles, an isolated bridge network, persistent volumes and Docker
+                  Secrets. The repository also includes Redis caching, Adminer and a static showcase
+                  site.
+                </p>
+              </details>
+            </div>
+            <div
+              class="architecture visual"
+              aria-label="Interactive Inception core service architecture"
+            >
+              <div class="architecture-label">CORE SERVICE ARCHITECTURE</div>
+              <div class="https">HTTPS / 443</div>
+              <div class="connector" aria-hidden="true"></div>
+              <button type="button" class="service" data-service="nginx" aria-pressed="true">
+                <span>01</span><strong>NGINX</strong><small>Web server</small>
+              </button>
+              <div class="connector" aria-hidden="true"></div>
+              <button type="button" class="service" data-service="wordpress" aria-pressed="false">
+                <span>02</span><strong>WordPress</strong><small>PHP-FPM</small>
+              </button>
+              <div class="connector" aria-hidden="true"></div>
+              <button type="button" class="service" data-service="mariadb" aria-pressed="false">
+                <span>03</span><strong>MariaDB</strong><small>Database</small>
+              </button>
+              <div class="service-inspector" aria-live="polite">
+                <h4 data-service-title>NGINX</h4>
+                <p data-service-details></p>
+                <details>
+                  <summary>Inspect Dockerfile <span aria-hidden="true">+</span></summary>
+                  <pre><code data-service-code></code></pre>
+                  <a data-service-source target="_blank" rel="noopener noreferrer"
+                    >View source ↗</a
+                  >
+                </details>
+              </div>
+              <button class="button" type="button" data-run-request>Follow a request</button>
+              <p data-request-status class="request-status" role="status">
+                Click a service to inspect its ports and storage.
+              </p>
+            </div>
+          </article>
+          <div class="section-head compact">
+            <h2>More <em>systems.</em></h2>
+            <p>Graphics, algorithms, concurrency and networking.</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="eyebrow">ALGORITHMS</div>
+              <h3>push_swap</h3>
+              <p>
+                Sort integers with two stacks and a constrained instruction set. Includes input
+                validation, small-stack strategies and a checker.
+              </p>
+              <span class="card-tech">C · Linked lists · Cost models</span>
+              <div class="card-links">
+                <a href="projects/push_swap.html">Project study →</a
+                ><a
+                  href="https://github.com/hamzabsst/push_swap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source ↗</a
+                ><a href="#stack-demo">Try demo ↓</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="eyebrow">CONCURRENCY</div>
+              <h3>philosophers</h3>
+              <p>
+                Coordinate philosophers competing for forks, with protected meal state, a monitor,
+                and a process/semaphore bonus implementation.
+              </p>
+              <span class="card-tech">C · pthreads · Mutexes</span>
+              <div class="card-links">
+                <a href="projects/philosophers.html">Project study →</a
+                ><a
+                  href="https://github.com/hamzabsst/philosophers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source ↗</a
+                ><a href="#philosophers-demo">Try demo ↓</a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="eyebrow">GRAPHICS</div>
+              <h3>cub3D</h3>
+              <p>
+                Render a textured first-person scene from a grid map using raycasting and DDA
+                traversal.
+              </p>
+              <span class="card-tech">C · Raycasting · MiniLibX</span>
+              <div class="card-links">
+                <a href="projects/cub3d.html">Project study →</a
+                ><a
+                  href="https://github.com/hamzabsst/cub3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="eyebrow">NETWORKING</div>
+              <h3>ft_irc</h3>
+              <p>
+                A multi-client IRC server with authentication, channels, messaging, operator
+                commands and buffered nonblocking socket I/O.
+              </p>
+              <span class="card-tech">C++98 · Sockets · Nonblocking I/O</span>
+              <div class="card-links">
+                <a href="projects/ft_irc.html">Project study →</a
+                ><a
+                  href="https://github.com/hamzabsst/ft_irc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section wrap" id="lab" aria-labelledby="lab-title">
+        <div class="section-head">
+          <h2 id="lab-title">Try the <em>lab.</em></h2>
+          <p>Small, interactive models of systems ideas.</p>
+        </div>
+        <div class="lab-grid">
+          <article class="demo-panel" id="stack-demo">
+            <div class="eyebrow">ALGORITHM PLAYGROUND</div>
+            <h3>push_swap</h3>
+            <p>Enter numbers. Watch two stacks turn a constraint into a sorted result.</p>
+            <form id="stack-form">
+              <label for="stack-input">Distinct integers (2–40)</label>
+              <div class="input-row">
+                <input
+                  id="stack-input"
+                  value="8 3 5 1 9 2"
+                  aria-describedby="stack-status"
+                  maxlength="500"
+                /><button class="button" type="submit">Sort</button>
+              </div>
+            </form>
+            <div class="stack-columns">
+              <div>
+                <h4>STACK A <span>top ↓</span></h4>
+                <div data-stack="a" class="stack-values"></div>
+              </div>
+              <div>
+                <h4>STACK B <span>top ↓</span></h4>
+                <div data-stack="b" class="stack-values"></div>
+              </div>
+            </div>
+            <div class="demo-controls">
+              <button class="button" type="button" data-stack-play>Play</button
+              ><button class="button" type="button" data-stack-step>Step</button
+              ><button class="button" type="button" data-stack-reset>Reset</button>
+            </div>
+            <p id="stack-status" class="demo-status" role="status"></p>
+            <p class="demo-caption">
+              JavaScript minimum-first model using valid stack operations. The C repository uses a
+              cost-based strategy; these move counts are separate.
+            </p>
+            <a href="projects/push_swap.html">See the C implementation and measured benchmark →</a>
+          </article>
+          <article class="demo-panel" id="philosophers-demo">
+            <div class="eyebrow">CONCURRENCY PLAYGROUND</div>
+            <h3>philosophers</h3>
+            <p>Shared forks, competing workers. Change the timings and watch starvation emerge.</p>
+            <form id="philosopher-form" class="philosopher-settings">
+              <label
+                >Workers<select name="count">
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option selected>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                </select></label
+              ><label
+                >Die (ms)<input
+                  name="die"
+                  type="number"
+                  min="100"
+                  max="10000"
+                  step="100"
+                  value="4000"
+                  required /></label
+              ><label
+                >Eat (ms)<input
+                  name="eat"
+                  type="number"
+                  min="100"
+                  max="10000"
+                  step="100"
+                  value="800"
+                  required /></label
+              ><label
+                >Sleep (ms)<input
+                  name="sleep"
+                  type="number"
+                  min="100"
+                  max="10000"
+                  step="100"
+                  value="1000"
+                  required /></label
+              ><button class="button" type="submit">Apply / reset</button>
+            </form>
+            <canvas
+              id="philosopher-canvas"
+              aria-label="Philosophers seated around a table with shared forks"
+              aria-describedby="philosopher-status philosopher-states"
+              role="img"
+              width="400"
+              height="280"
+            ></canvas>
+            <div class="demo-controls">
+              <button class="button" type="button" data-philosopher-play>Start</button
+              ><button class="button" type="button" data-philosopher-step>Step 250ms</button>
+            </div>
+            <p id="philosopher-status" class="demo-status" role="status"></p>
+            <ul id="philosopher-states" data-philosopher-states class="philosopher-states"></ul>
+            <p class="demo-caption">
+              Deterministic JavaScript simulation with atomic two-fork acquisition. It illustrates
+              contention; the C project uses real threads and mutexes.
+            </p>
+            <a href="projects/philosophers.html">Read the concurrency study →</a>
+          </article>
+        </div>
+      </section>
+      <section class="notes-section wrap" id="notes" aria-labelledby="notes-title">
+        <div class="section-head">
+          <h2 id="notes-title">Under the <em>hood.</em></h2>
+          <p>Short notes on the ideas behind the projects.</p>
+        </div>
+        <div class="notes-grid">
+          <a class="note-card" href="notes/minishell-pipes.html"
+            ><span class="eyebrow">UNIX · 3 MIN READ</span>
+            <h3>How pipes work in Minishell</h3>
+            <p>Two file descriptors, multiple processes, and why closing the right end matters.</p>
+            <span>Read note →</span></a
+          ><a class="note-card" href="notes/docker-secrets.html"
+            ><span class="eyebrow">DOCKER · 3 MIN READ</span>
+            <h3>Docker secrets, explained</h3>
+            <p>How password files reach the right service in the Inception stack.</p>
+            <span>Read note →</span></a
+          >
+        </div>
+      </section>
+      <section class="activity-section wrap" aria-labelledby="activity-title">
+        <div class="section-head compact">
+          <h2 id="activity-title">On <em>GitHub.</em></h2>
+          <p data-github-status role="status">Loading public repository activity…</p>
+        </div>
+        <div data-github-activity class="activity-grid">
+          <article><a href="https://github.com/hamzabsst/minishell">minishell ↗</a></article>
+          <article><a href="https://github.com/hamzabsst/inception">inception ↗</a></article>
+          <article><a href="https://github.com/hamzabsst/ft_irc">ft_irc ↗</a></article>
+        </div>
+      </section>
+      <section class="wrap about" id="about" aria-labelledby="about-title">
+        <div>
+          <div class="eyebrow">ABOUT ME</div>
+          <h2 id="about-title">A mathematical foundation.<br /><em>A practical approach.</em></h2>
+        </div>
+        <div class="about-content">
+          <p>
+            My background connects mathematics and computer science with hands-on software
+            development. At 1337, I learn through projects, peer review and collaborative work.
+          </p>
+          <p>
+            I’ve worked on parsing, processes, memory management and containerized services. I’m
+            looking for opportunities to apply that foundation, keep learning and contribute to a
+            team.
+          </p>
+          <div class="education">
+            <div>
+              <span>2024 — present</span>
+              <h3>1337 Coding School · UM6P</h3>
+              <p>Software Engineering Program</p>
+            </div>
+            <div>
+              <span>2021 — 2024</span>
+              <h3>ENS, Tetouan</h3>
+              <p>Degree in Mathematics and Computer Science</p>
+            </div>
+          </div>
+          <div class="toolbox">
+            <h3>Tools I work with</h3>
+            <p>C · C++ · Python · Docker · Git · Valgrind</p>
+            <p class="languages">Arabic · English · French</p>
+          </div>
+          <a class="text-link" id="resume-link" target="_blank" rel="noopener noreferrer"
+            >View résumé <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <div class="eyebrow">LET’S CONNECT</div>
+          <h2 id="contact-title">Let’s build<br /><em>what’s next.</em></h2>
+          <p>I’d like to hear about C/C++ and systems engineering roles and internships.</p>
+          <div class="email-actions">
+            <a class="email" id="email-link"></a
+            ><button class="button" type="button" data-copy-email>Copy email</button>
+          </div>
+          <a
+            class="contact-linkedin"
+            href="https://www.linkedin.com/in/hamza-boussetta-830155220/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          >
+          <p id="site-status" class="site-status" role="status" aria-live="polite"></p>
+          <footer>
+            <span>Hamza Boussetta</span
+            ><a href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer"
+              >GitHub ↗</a
+            ><a href="#main">Back to top ↑</a>
+          </footer>
+        </div>
+      </section>
+    </main>
+    <dialog id="command-palette" aria-labelledby="palette-title">
+      <div class="palette-head">
+        <h2 id="palette-title">Quick jump</h2>
+        <button type="button" data-close-palette aria-label="Close quick jump">×</button>
+      </div>
+      <label class="sr-only" for="palette-search">Search commands</label
+      ><input id="palette-search" placeholder="Projects, résumé, email…" autocomplete="off" />
+      <div data-command-results class="palette-results"></div>
+      <p class="palette-hint">↑ ↓ select · Enter open · Esc close</p>
+    </dialog>
+  </body>
 </html>

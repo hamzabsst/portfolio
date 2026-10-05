@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>philosophers — Hamza Boussetta</title>
+    <meta
+      name="description"
+      content="Coordinate philosophers competing for forks, with protected meal state, a monitor, and a process/semaphore bonus implementation."
+    />
+    <link rel="canonical" href="https://hamzabsst.vercel.app/projects/philosophers.html" />
+    <meta property="og:title" content="philosophers — Hamza Boussetta" />
+    <meta
+      property="og:description"
+      content="Coordinate philosophers competing for forks, with protected meal state, a monitor, and a process/semaphore bonus implementation."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://hamzabsst.vercel.app/projects/philosophers.html" />
+    <meta property="og:image" content="https://hamzabsst.vercel.app/assets/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../features.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#article">Skip to content</a>
+    <header class="wrap navigation">
+      <a class="wordmark" href="../index.html" aria-label="Hamza Boussetta home">HB<span>.</span></a
+      ><a href="../index.html#work">← All projects</a><a href="../index.html#contact">Contact ↗</a>
+    </header>
+    <main class="article-layout wrap" id="article">
+      <div class="eyebrow">PROJECT STUDY / CONCURRENCY</div>
+      <h1>philosophers</h1>
+      <p class="article-lead">
+        Coordinate philosophers competing for forks, with protected meal state, a monitor, and a
+        process/semaphore bonus implementation.
+      </p>
+      <p class="card-tech">C · pthreads · Mutexes</p>
+      <div class="article-actions">
+        <a
+          class="button"
+          href="https://github.com/hamzabsst/philosophers"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Repository ↗</a
+        ><a class="button" href="../index.html#philosophers-demo">Try the browser model →</a>
+      </div>
+      <section>
+        <h2>The problem</h2>
+        <p>
+          Coordinate concurrent workers that need two shared resources while detecting starvation
+          and keeping output consistent.
+        </p>
+      </section>
+      <section>
+        <h2>A design decision</h2>
+        <p>
+          Use mutexes around fork access, meal timestamps, output and the end flag. A monitor
+          inspects meal state and stops the run when a philosopher dies or the meal quota is
+          reached.
+        </p>
+      </section>
+      <section>
+        <h2>A debugging edge case</h2>
+        <p>
+          The single-philosopher case cannot obtain two forks. The routine handles it explicitly:
+          take one fork, wait until time to die, then report death. Timing and lock ordering remain
+          important test cases for multiple workers.
+        </p>
+      </section>
+      <section>
+        <h2>A possible next iteration</h2>
+        <p>
+          A useful next iteration would add automated stress runs and race-detector checks across
+          odd and even worker counts.
+        </p>
+      </section>
+      <section>
+        <h2>Explore the implementation</h2>
+        <p>
+          This study describes the source at commit <code>e0133ad</code>. The edge case is a code
+          walkthrough, not a personal debugging story.
+        </p>
+        <a
+          class="button"
+          href="https://github.com/hamzabsst/philosophers/blob/e0133ade8662684eaecc648a4431c0e92ce2c3f5/philo/routine.c"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Read philo/routine.c ↗</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      <a href="../index.html">Back to portfolio ↑</a
+      ><a href="https://github.com/hamzabsst" target="_blank" rel="noopener noreferrer">GitHub ↗</a
+      ><a
+        href="https://www.linkedin.com/in/hamza-boussetta-830155220/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn ↗</a
+      >
+    </footer>
+  </body>
+</html>
