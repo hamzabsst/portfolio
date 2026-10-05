@@ -1,6 +1,6 @@
 # Hamza Boussetta — Portfolio
 
-Live website: https://hamzabsst.vercel.app/
+Live website: https://hamzabsst.me/
 
 A static HTML, CSS, and JavaScript portfolio with a dark theme, animated
 character, selected projects, and two browser demos.
