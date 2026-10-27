@@ -38,6 +38,8 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
     <link rel="stylesheet" href="features.css" />
+    <link rel="stylesheet" href="project-explorer.css" />
+    <script type="module" src="js/project-explorer.js"></script>
     <script type="module" src="js/features.js"></script>
   </head>
   <body>
@@ -48,7 +50,7 @@
       >
       <nav aria-label="Main navigation">
         <a href="#about">About</a><a href="#work">Work</a
-        ><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+        ><a href="#lab">Lab</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
 
@@ -259,6 +261,77 @@
             <h2 id="work-title">My <em>work.</em></h2>
             <p>42 projects and independent developer tools.</p>
           </div>
+          <section class="project-explorer" aria-labelledby="explorer-title" data-project-explorer>
+            <div class="explorer-heading">
+              <div>
+                <p class="eyebrow">PROJECT EXPLORER</p>
+                <h3 id="explorer-title">Find your way into the work.</h3>
+              </div>
+              <p>From browser tools to systems ideas.<br />Pick a project and take a closer look.</p>
+            </div>
+            <div class="explorer-controls" data-explorer-controls hidden>
+              <div class="explorer-search">
+                <label for="project-search">Search projects or technologies</label>
+                <input id="project-search" type="search" placeholder="Try React, C++, memory…" maxlength="100" autocomplete="off" aria-controls="project-results" />
+              </div>
+              <div class="explorer-filters" role="group" aria-label="Filter projects by topic">
+                <button type="button" data-project-filter="all" aria-pressed="true" aria-controls="project-results">All work</button>
+                <button type="button" data-project-filter="web" aria-pressed="false" aria-controls="project-results">Web</button>
+                <button type="button" data-project-filter="systems" aria-pressed="false" aria-controls="project-results">Systems</button>
+                <button type="button" data-project-filter="tools" aria-pressed="false" aria-controls="project-results">Developer tools</button>
+              </div>
+            </div>
+            <div class="explorer-summary">
+              <p data-project-count role="status" aria-live="polite" aria-atomic="true">5 projects to explore</p>
+              <button type="button" class="explorer-reset" data-project-reset hidden>Clear filters</button>
+            </div>
+            <ul id="project-results" class="explorer-results" aria-label="Project index">
+              <li data-project-entry data-topics="web tools" data-keywords="javascript frontend front-end memcheck debugging local-first browser">
+                <a class="explorer-result" href="#leaklens">
+                  <span class="explorer-number" aria-hidden="true">01</span>
+                  <span class="explorer-project"><strong>LeakLens</strong> <span>Make sense of Valgrind memory reports.</span></span>
+                  <span class="explorer-tech">JavaScript · Valgrind</span>
+                  <span class="explorer-destination">View project <span aria-hidden="true">↘</span></span>
+                </a>
+              </li>
+              <li data-project-entry data-topics="web" data-keywords="javascript full-stack fullstack frontend backend socket.io webrtc real-time chat screen sharing">
+                <a class="explorer-result" href="#afterglow">
+                  <span class="explorer-number" aria-hidden="true">02</span>
+                  <span class="explorer-project"><strong>Afterglow</strong> <span>Synchronized video, voice and shared screens.</span></span>
+                  <span class="explorer-tech">React · Node.js · WebRTC</span>
+                  <span class="explorer-destination">View project <span aria-hidden="true">↘</span></span>
+                </a>
+              </li>
+              <li data-project-entry data-topics="systems" data-keywords="cpp c++98 networking nonblocking sockets poll server chat channels">
+                <a class="explorer-result" href="#ft_irc">
+                  <span class="explorer-number" aria-hidden="true">03</span>
+                  <span class="explorer-project"><strong>ft_irc</strong> <span>Follow a message through a multi-client server.</span></span>
+                  <span class="explorer-tech">C++98 · Sockets · poll()</span>
+                  <span class="explorer-destination">Try chat demo <span aria-hidden="true">↘</span></span>
+                </a>
+              </li>
+              <li data-project-entry data-topics="systems" data-keywords="c algorithms sorting stacks benchmark operations">
+                <a class="explorer-result" href="#stack-demo">
+                  <span class="explorer-number" aria-hidden="true">04</span>
+                  <span class="explorer-project"><strong>push_swap</strong> <span>Explore sorting with two stacks and a few moves.</span></span>
+                  <span class="explorer-tech">C · Algorithms</span>
+                  <span class="explorer-destination">Try stack demo <span aria-hidden="true">↘</span></span>
+                </a>
+              </li>
+              <li data-project-entry data-topics="systems" data-keywords="c concurrency threads pthreads mutex mutexes synchronization starvation dining philosophers">
+                <a class="explorer-result" href="#philosophers-demo">
+                  <span class="explorer-number" aria-hidden="true">05</span>
+                  <span class="explorer-project"><strong>philosophers</strong> <span>See what happens when workers share resources.</span></span>
+                  <span class="explorer-tech">C · Threads · Mutexes</span>
+                  <span class="explorer-destination">Try concurrency demo <span aria-hidden="true">↘</span></span>
+                </a>
+              </li>
+            </ul>
+            <div class="explorer-empty" data-project-empty hidden>
+              <p>No projects match this search.</p>
+              <span>Try a technology such as React or C++, or clear the filters to see all five projects.</span>
+            </div>
+          </section>
           <article class="project" id="leaklens">
             <div class="project-copy">
               <div class="project-index">01 / DEVELOPER TOOLS</div>
@@ -389,7 +462,7 @@
               aria-label="Interactive IRC chat simulation"
             >
               <div class="irc-header">
-                <strong>#systems</strong><span>2 clients · connected</span>
+                <strong>#systems</strong> <span>2 clients · connected</span>
               </div>
               <div class="irc-clients">
                 <section class="irc-client" aria-label="Hamza chat client">

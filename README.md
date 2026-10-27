@@ -17,6 +17,9 @@ character, selected projects, and interactive browser demos.
 - `intro-story.js` / `intro-story.css`: shared character transition from the
   hero to About, with a normal-flow mobile and reduced-motion fallback
 - `js/features.js`: entry point for retained interactive features
+- `project-explorer.css` / `js/project-explorer.js`: searchable project index,
+  topic controls, result feedback and reset behavior
+- `js/project-search.js`: project and technology matching without dependencies
 - `js/ui.js`: clipboard feedback
 - `js/motion.js`: shared pause, visibility and reduced-motion policy
 - `js/irc-demo.js`: two-client chat and IRC connection walkthrough
@@ -33,9 +36,23 @@ http://localhost:8765/.
 
 ## Checks
 
-Run `node tests/models.test.mjs`, `node tests/motion.test.mjs` and
-`node tests/intro-story.test.mjs` and `node tests/irc.test.mjs` (Node 22+). No
-package install is required.
+Run `node --test tests/*.test.mjs` (Node 22+). No package install is required.
+
+## Project Explorer
+
+The index above the featured projects links to the existing project sections
+and lab demos. Search by name or technology (for example, `React`, `C++`,
+`push swap` or `mutex`), then narrow the results with a topic filter. Search
+and topic filters work together; Clear filters restores all five projects.
+Links remain available with JavaScript disabled, and interactive controls only
+appear after the explorer initializes. The search runs locally in the browser.
+
+The compact directory takes inspiration from
+[Brittany Chiang's project archive](https://brittanychiang.com/archive) and the
+topic grouping of [Anthony Fu's projects](https://antfu.me/projects), using this
+portfolio's own content and visual design.
+
+## Interactive demos
 
 Browser demos are JavaScript models, labeled separately from the C/C++
 implementations. The push_swap study includes measured native C operation counts
